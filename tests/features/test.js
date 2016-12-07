@@ -1,3 +1,7 @@
+// More useful Mocha syntax
+// expect(browser.getUrl()).to.equal("http://localhost:3000/names");
+// expect(browser.getText('#count_outcome')).to.equal("You have pressed the button 1 times.")
+
 function cleanDatabase() {
   server.execute(function () {
     Package['xolvio:cleaner'].resetDatabase();
@@ -16,7 +20,7 @@ function signUp(){
 function logOut(){
   browser.url('localhost:3000');
   browser.click('#login-buttons');
-  // browser.click('#login-buttons-logout');
+  browser.click('#login-buttons-logout');
 };
 
 function signIn(){
