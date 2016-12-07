@@ -1,0 +1,12 @@
+<template name="Profile">
+  <div class="profile-container">
+    <p> Bio: {{ profile.bio }} </p>
+    <p> Location: {{ profile.location}} </p>
+    Skills:
+      <ul>
+        {{#each skills}}
+          <li> {{ skill }} </li>
+        {{/each}}
+    </ul>
+  </div>
+</template>

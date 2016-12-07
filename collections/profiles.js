@@ -1,10 +1,16 @@
 Profiles = new Mongo.Collection('profiles')
 
+Skills = new SimpleSchema({
+  skill: {
+    type: String
+  }
+});
+
 ProfileSchema = new SimpleSchema({
   created_by: {
     type: String,
     label: 'Created by:',
-    optional: true,
+    unique: true,
     autoValue: function() {
       return this.userId;
     },
@@ -12,14 +18,21 @@ ProfileSchema = new SimpleSchema({
       type: 'hidden'
     }
   },
-  skills: {
+  bio: {
     type: String,
-    label: 'Skills:',
+    min: 5,
+    max: 1000,
+    autoform: {
+       rows: 5
+    }
   },
   location: {
     type: String,
     label: 'Location:'
-  }
+  },
+  skills: {
+    type: [Skills]
+  },
 });
 
 Profiles.attachSchema(ProfileSchema);
