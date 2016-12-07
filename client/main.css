@@ -1,1 +1,6 @@
 /* CSS declarations go here */
+body {
+    font-family: sans-serif;
+    background-color: #DCE8F4;
+    padding: 20px;
+}
