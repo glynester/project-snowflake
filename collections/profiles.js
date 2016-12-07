@@ -1,6 +1,6 @@
 Profiles = new Mongo.Collection('profiles')
 
-Skillset = new SimpleSchema({
+Skills = new SimpleSchema({
   skill: {
     type: String
   }
@@ -31,7 +31,7 @@ ProfileSchema = new SimpleSchema({
     label: 'Location:'
   },
   skills: {
-    type: [Skillset]
+    type: [Skills]
   },
 });
 
