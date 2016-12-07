@@ -21,3 +21,5 @@ ProfileSchema = new SimpleSchema({
     label: 'Location:'
   }
 });
+
+Profiles.attachSchema(ProfileSchema);
