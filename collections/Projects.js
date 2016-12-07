@@ -34,18 +34,18 @@ ProjectsSchema = new SimpleSchema({
           type: "hidden"
       }
     },
-    date: {
-      type: Date,
-      label: "Date of Project"
-    },
-    minPeople: {
-      type: Number,
-      label: 'Minumum People Required'
-    },
-    maxPeople: {
-      type: Number,
-      label: 'Maximum People Allowed'
-    }
+  date: {
+    type: Date,
+    label: "Date of Project"
+  },
+  minPeople: {
+    type: Number,
+    label: 'Minumum People Required'
+  },
+  maxPeople: {
+    type: Number,
+    label: 'Maximum People Allowed'
+  }
 });
 
 Projects.attachSchema(ProjectsSchema);
