@@ -1,0 +1,17 @@
+<template name='ProjectSingle'>
+  <p>Description: {{project.description}}</p>
+  <p>Location: {{project.location}}</p>
+  <p>Date and time: {{project.date}}</p>
+  <p>Minimum number of people: {{project.minPeople}}</p>
+  <p>Maximum number of people: {{project.maxPeople}}</p>
+  <p>Skills:</p>
+  <ul>
+  {{#each project.skills}}
+    <li>{{skill}}</li>
+  {{/each}}
+</ul>
+  {{#if currentUserProject}}
+  <a href="/project/update/{{project._id}}">Update</a>
+  <button id="delete-project">Delete</button>
+  {{/if}}
+</template>

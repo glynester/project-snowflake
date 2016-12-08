@@ -1,5 +1,11 @@
 Projects = new Mongo.Collection('projects')
 
+Skills = new SimpleSchema({
+  skill: {
+    type: String
+  }
+});
+
 ProjectsSchema = new SimpleSchema({
   created_by: {
     type: String,
@@ -12,10 +18,6 @@ ProjectsSchema = new SimpleSchema({
       type: 'hidden'
     }
   },
-  skills: {
-    type: String,
-    label: 'Skills:',
-  },
   location: {
     type: String,
     label: 'Location:'
@@ -23,6 +25,11 @@ ProjectsSchema = new SimpleSchema({
   description: {
     type: String,
     label: 'Description:',
+    autoform: {
+          afFieldInput: {
+            type: "textarea"
+          }
+        }
   },
   createdAt: {
     type: Date,
@@ -36,7 +43,12 @@ ProjectsSchema = new SimpleSchema({
     },
   date: {
     type: Date,
-    label: "Date of Project"
+    label: "Date and time of Project",
+    autoform: {
+     afFieldInput: {
+       type: "datetime-local"
+     }
+   }
   },
   minPeople: {
     type: Number,
@@ -45,6 +57,9 @@ ProjectsSchema = new SimpleSchema({
   maxPeople: {
     type: Number,
     label: 'Maximum People Allowed'
+  },
+  skills: {
+    type: [Skills]
   }
 });
 

@@ -2,9 +2,8 @@
   <div class="projects">
     <ul>
     {{#each projects}}
-      <li>{{description}}, {{location}} </li>
+      <li><a href="/project/{{_id}}">{{description}}, {{location}}</a></li>
     {{/each}}
     </ul>
   </div>
-
 </template>
