@@ -1,12 +1,16 @@
 <template name="NewProfile">
   <div class="new-profile-container">
-     {{#if userHasProfile }}
-       <p> You have already completed your profile </p>
-       <form id="update-profile-button" action="/profile/update" method=get>
-          <input type="submit" value="Update profile">
-      </form>
-      {{else}}
-          {{> quickForm collection="Profiles" id="insertProfileForm" type="insert" class="profile-form"}}
-      {{/if}}
+    {{#if userSignedIn }}
+      <p> Please sign up to create a profile </p>
+    {{else}}
+       {{#if userHasProfile }}
+         <p> You have already completed your profile </p>
+         <form id="update-profile-button" action="/profile/update" method=get>
+            <input type="submit" value="Update profile">
+        </form>
+        {{else}}
+            {{> quickForm collection="Profiles" id="insertProfileForm" type="insert" class="profile-form"}}
+        {{/if}}
+    {{/if}}
   </div>
 </template>

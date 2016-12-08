@@ -13,14 +13,32 @@ Template.Profile.helpers({
     var userProfile = Profiles.findOne({created_by: currentUser});
     return userProfile;
   },
+  usersProjects(){
+    var currentUser = Meteor.userId();
+    var listOfUserProjects = Projects.find({created_by: currentUser});
+    var allProjects = Projects.find({});
+    console.log(allProjects)
+
+
+    console.log(listOfUserProjects)
+    return listOfUserProjects
+  },
 });
 Template.NewProfile.helpers({
   userHasProfile(){
     var currentUser = Meteor.userId();
-    console.log("test");
     var userProfileBoolean = Profiles.findOne({created_by: currentUser});
-    console.log("HELP!");
-    console.log(userProfileBoolean);
     return userProfileBoolean;
+  },
+  userSignedIn(){
+    var currentUser = Meteor.userId();
+    return !currentUser
+  },
+});
+
+Template.UpdateProfile.events({
+  'submit #updateProfileForm'(event) {
+    FlowRouter.go('profile');
+
   },
 });
