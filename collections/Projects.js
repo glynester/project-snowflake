@@ -18,9 +18,6 @@ ProjectsSchema = new SimpleSchema({
       type: 'hidden'
     }
   },
-  skills: {
-    type: [Skills]
-  },
   location: {
     type: String,
     label: 'Location:'
@@ -28,6 +25,11 @@ ProjectsSchema = new SimpleSchema({
   description: {
     type: String,
     label: 'Description:',
+    autoform: {
+          afFieldInput: {
+            type: "textarea"
+          }
+        }
   },
   createdAt: {
     type: Date,
@@ -50,6 +52,9 @@ ProjectsSchema = new SimpleSchema({
   maxPeople: {
     type: Number,
     label: 'Maximum People Allowed'
+  },
+  skills: {
+    type: [Skills]
   }
 });
 
