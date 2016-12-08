@@ -1,14 +1,11 @@
 <template name="HomeLayout">
-  <header>
-    <h1> Project Snowflake </h1>
-    {{> navigation}}
-  </header>
+
+  {{> Header}}
   <main>
-    <p> This is the Homepage </p>
-      {{#if currentUser}}
-      {{else}}
-          {{> login}}
-          {{> register}}
-      {{/if}}
+    <div class="billboard">
+      <h2>Organize Your Projects</h2>
+      <h3>Login or sign up</h3>
+    </div>
+
   </main>
 </template>
