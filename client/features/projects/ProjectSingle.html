@@ -10,6 +10,8 @@
     <li>{{skill}}</li>
   {{/each}}
 </ul>
+  {{#if currentUserProject}}
   <a href="/project/update/{{project._id}}">Update</a>
   <button id="delete-project">Delete</button>
+  {{/if}}
 </template>
