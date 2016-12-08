@@ -1,11 +1,10 @@
 <template name="MainLayout">
+    {{> Header}}
   <header>
     <h1> Project Snowflake </h1>
     {{> navigation}}
   </header>
   <main>
-    <!-- {{> loginButtons}} -->
-
     {{> login}}
     {{#if currentUser}}
     {{else}}

@@ -15,7 +15,7 @@ Template.login.events({
             if(error){
                 console.log(error.reason);
             } else {
-                FlowRouter.go("home");
+                FlowRouter.go("Main");
                 $('[name=email]').val("");
                 $('[name=password]').val("");
             }

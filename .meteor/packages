@@ -29,3 +29,14 @@ accounts-ui
 accounts-password
 xolvio:backdoor
 xolvio:cleaner
+erasaur:meteor-lodash
+stolinski:stylus-multi
+fortawesome:fontawesome
+spiderable
+fastclick
+dburles:collection-helpers
+raix:handlebar-helpers
+matb33:bootstrap-glyphicons
+zimme:active-route
+gwendall:auth-client-callbacks
+datariot:ganalytics
