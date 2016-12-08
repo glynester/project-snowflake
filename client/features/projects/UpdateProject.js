@@ -1,7 +1,6 @@
-// Template.UpdateProfile.helpers({
-//   getProject(){
-//     var currentUser = Meteor.userId();
-//     var userProfile = Profiles.findOne({created_by: currentUser});
-//     return userProfile;
-//   },
-// });
+Template.UpdateProject.helpers({
+    project: () => {
+        var id = FlowRouter.getParam('id');
+        return Projects.findOne({_id: id});
+    }
+});
