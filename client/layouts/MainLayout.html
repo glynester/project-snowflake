@@ -3,17 +3,13 @@
     <h1> Project Snowflake </h1>
     {{> navigation}}
   </header>
-  <main>
-    <!-- {{> loginButtons}} -->
-
-    <!-- {{> login}} -->
+  <main class="main-layout">
     {{#if currentUser}}
     {{else}}
       {{> register}}
     {{/if}}
     {{> Header}}
     {{> SideNav}}
-  <main class="main-layout">
     {{> Template.dynamic template=main}}
   </main>
 </template>
