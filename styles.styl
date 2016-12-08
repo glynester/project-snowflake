@@ -13,7 +13,7 @@ shadow-level(l = 1)
     if l == 3
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     if l == 4
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        box-shadow: 0 18px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     if l == 5
         box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
@@ -79,7 +79,7 @@ body
 
 header
     color #FFF
-    background: purp
+    background: blue
     padding 20px
     fixed top left
     width 100%
@@ -89,7 +89,7 @@ header
     clearfix()
     h1
         margin 0
-        font-size 1.6em
+        font-size 2.0em
         float left
     .login-buttons-dropdown-align-
         float right
@@ -106,17 +106,18 @@ p
     margin-bottom 30px
 
 .billboard
-    background dark-purp
+    background blue
     color #FFF
+    margin-top 160px
     font-size 2em
     text-align center
     padding 60px
     h2
-        margin 0
+        margin 10
 
 .main-layout
     lost-center 90%
-    margin-top 20px
+    margin-top 40px
     +above($med)
         lost-center 90%
         padding-left $side-nav
@@ -263,7 +264,7 @@ input, select, textarea
     height 100px
     width 100%
     overflow hidden
-    background dark-purp
+    background blue
     color #FFF
     z-index: z.header
     shadow-level(2)
@@ -281,7 +282,7 @@ input, select, textarea
         text-align center
         trans()
         &:hover, &.active
-            background purp
+            background blue
     i
         display block
         font-size 2em
@@ -306,7 +307,7 @@ input, select, textarea
             &:hover, &.active
                 border-left 10px solid teal
 
-.recipe
+.projects
     background #FFF
     padding 0 20px 20px
     margin-bottom 20px
@@ -325,8 +326,8 @@ input, select, textarea
             display none
         .remove-from-menu
             display block
-    h3
-        font-size: 3em;
+    h1
+        font-size: 6em;
         opacity: 0.3;
         border-bottom: rgba(0,0,0, 0.3) solid 3px
         margin-top 0
@@ -369,14 +370,14 @@ input, select, textarea
 
 
 .menu-item
-    @extend .recipe
+    @extend .projects
 
 .shopping-list
-    @extend .recipe
+    @extend .projects
     padding 50px 5%
     list-style none
     li
-        font-size 2em
+        font-size 6em
         padding 20px
         border-bottom 1px solid light-grey
         border-top 1px solid light-grey
@@ -388,4 +389,22 @@ input, select, textarea
         right 0
         left auto
         a
-            color dark-blue
+            color blue
+
+
+.profile-container
+    position relative
+    background #FFF
+    padding 20px
+    margin-bottom 20px
+    shadow-level(2)
+    .fa-close
+        position absolute
+          top 0
+          right 0
+          padding 20px
+            label
+            display block
+            margin-bottom 10px
+            textarea, input
+            width 100%
