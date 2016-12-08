@@ -1,5 +1,11 @@
 Projects = new Mongo.Collection('projects')
 
+Skills = new SimpleSchema({
+  skill: {
+    type: String
+  }
+});
+
 ProjectsSchema = new SimpleSchema({
   created_by: {
     type: String,
@@ -13,8 +19,7 @@ ProjectsSchema = new SimpleSchema({
     }
   },
   skills: {
-    type: String,
-    label: 'Skills:',
+    type: [Skills]
   },
   location: {
     type: String,
