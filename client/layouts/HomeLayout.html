@@ -1,3 +1,14 @@
 <template name="HomeLayout">
-<p> This is the Homepage </p>
+  <header>
+    <h1> Project Snowflake </h1>
+    {{> navigation}}
+  </header>
+  <main>
+    <p> This is the Homepage </p>
+      {{#if currentUser}}
+      {{else}}
+          {{> login}}
+          {{> register}}
+      {{/if}}
+  </main>
 </template>
