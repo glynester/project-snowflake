@@ -14,3 +14,13 @@ Template.Profile.helpers({
     return userProfile;
   },
 });
+Template.NewProfile.helpers({
+  userHasProfile(){
+    var currentUser = Meteor.userId();
+    console.log("test");
+    var userProfileBoolean = Profiles.findOne({created_by: currentUser});
+    console.log("HELP!");
+    console.log(userProfileBoolean);
+    return userProfileBoolean;
+  },
+});
