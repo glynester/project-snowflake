@@ -43,7 +43,12 @@ ProjectsSchema = new SimpleSchema({
     },
   date: {
     type: Date,
-    label: "Date of Project"
+    label: "Date and time of Project",
+    autoform: {
+     afFieldInput: {
+       type: "datetime-local"
+     }
+   }
   },
   minPeople: {
     type: Number,

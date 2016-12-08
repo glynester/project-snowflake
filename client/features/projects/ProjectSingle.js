@@ -11,5 +11,5 @@ Template.ProjectSingle.events({
     var id = FlowRouter.getParam('id');
     Projects.remove({_id: id})
   }
-  
+
 });
