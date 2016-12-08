@@ -17,10 +17,6 @@ Template.Profile.helpers({
     var currentUser = Meteor.userId();
     var listOfUserProjects = Projects.find({created_by: currentUser});
     var allProjects = Projects.find({});
-    console.log(allProjects)
-
-
-    console.log(listOfUserProjects)
     return listOfUserProjects
   },
 });
