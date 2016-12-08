@@ -43,6 +43,8 @@ maroon = #6A2140
 light-red = #CA5765
 pink = #CF256D
 orange = #E8846B
+dark-blue = #003375
+mid-blue = #013565
 
 z = {
     neg: -7,
@@ -65,7 +67,7 @@ social = {
 }
 
 $side-nav = 100px
-$side-nav-large = 200px
+$side-nav-large = 150px
 
 html
     box-sizing: border-box
@@ -79,18 +81,17 @@ body
 
 header
     color #FFF
-    background: blue
-    padding 20px
+    background: mid-blue
+    padding 10px
     fixed top left
     width 100%
-    height 70px
+    height 100px
     z-index: z.header
     shadow-level(2)
     clearfix()
     h1
         margin 0
-        font-size 2.0em
-        float left
+        font-size 3.0em
     .login-buttons-dropdown-align-
         float right
         a
@@ -264,7 +265,7 @@ input, select, textarea
     height 100px
     width 100%
     overflow hidden
-    background blue
+    background dark-blue
     color #FFF
     z-index: z.header
     shadow-level(2)
@@ -282,7 +283,7 @@ input, select, textarea
         text-align center
         trans()
         &:hover, &.active
-            background blue
+            background dark-teal
     i
         display block
         font-size 2em
