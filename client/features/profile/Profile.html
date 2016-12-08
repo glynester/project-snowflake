@@ -8,5 +8,19 @@
           <li> {{ skill }} </li>
         {{/each}}
     </ul>
+    <form id="update-profile-button" action="/profile/update" method=get>
+       <input type="submit" value="Update profile">
+   </form>
   </div>
+
+  <h3> Your projects: </h3>
+
+  {{#each usersProjects}}
+  <ul>
+    <li>
+      <p> Description: {{description}} </p>
+      <p> Date: {{date}} </p>
+    </li>
+  </ul>
+  {{/each}}
 </template>
