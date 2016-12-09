@@ -18,6 +18,12 @@ Template.Profile.helpers({
     var listOfUserProjects = Projects.find({created_by: currentUser});
     return listOfUserProjects
   },
+  noProjects(){
+    var currentUser = Meteor.userId();
+    var listOfUserProjects = Projects.find({created_by: currentUser});
+    console.log(listOfUserProjects.count() < 0);
+    return listOfUserProjects.count() === 0;
+  },
   volunteerProjects(){
     var currentUser = Meteor.userId();
     var userProfile = Profiles.findOne({created_by: currentUser});

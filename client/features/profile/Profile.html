@@ -1,5 +1,7 @@
 <template name="Profile">
   <div class="profile-container">
+
+
     <p id='Bio'> Bio: {{ profile.bio }} </p>
     <p id='Location'> Location: {{ profile.location}} </p>
     Skills:
@@ -13,16 +15,23 @@
    </form>
   </div>
 
-  <h3> Projects you've posted: </h3>
+  {{#if noProjects }}
 
-  {{#each usersProjects}}
-  <ul>
-    <li>
-      <p> Description: {{description}} </p>
-      <p> Date: {{date}} </p>
-    </li>
-  </ul>
-  {{/each}}
+      <h3> You have no open projects, go create some! </h3>
+
+  {{ else }}
+      <h3> Projects you've posted: </h3>
+
+      {{#each usersProjects}}
+      <ul>
+        <li>
+          <p> Description: {{description}} </p>
+          <p> Date: {{date}} </p>
+        </li>
+      </ul>
+      {{/each}}
+  {{/if}}
+
 
   <h3> Projects you've volunteered for: </h3>
 
@@ -34,4 +43,5 @@
     </li>
   </ul>
   {{/each}}
+>>>>>>> master
 </template>
