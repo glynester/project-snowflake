@@ -1,13 +1,18 @@
 import { signUp, signIn, logOut, cleanDatabase } from './helpers.js'
 
-describe('my module', function () {
-  beforeEach(function () {
-    cleanDatabase();
-  });
-});
-
-
 describe('Project', function() {
+
+  //This seems to work but clears the db each time.
+  // beforeEach(function () {
+  //   cleanDatabase();
+  // });
+
+  // Once we can enter dates using the test script we need to:
+  // Create a test to check projects cannot be created in the past.
+
+  // Tests below rely on the data not being deleted. Once we start
+  // to clear the database, these tests will fail.
+
   it('adds a project @watch', function () {
     signIn();
     browser.url('localhost:3000/project/new');
@@ -26,7 +31,7 @@ describe('Project', function() {
   });
 
 
-  it('amends a project @watch', function () {
+  it('amends a project (adds a task) @watch', function () {
     // signIn();
     var getProject = server.execute( function() {
             return Projects.findOne( { description: 'test projecty' } );
@@ -40,11 +45,28 @@ describe('Project', function() {
     browser.setValue( '[name="minPeople"]', '5' );
     browser.setValue( '[name="maxPeople"]', '101' );
     browser.setValue( '[name="skills.0.skill"]', 'singing' );
+    browser.click('.autoform-add-item');
+    browser.setValue( '[name="skills.1.skill"]', 'dancing' );
     browser.submitForm('#updateProjectForm');
     var getProject = server.execute( function() {
             return Projects.findOne( { description: 'XYZ' } );
           });
           expect ( getProject.description ).to.equal( 'XYZ');
+  });
+
+  it('amends a project (deletes a task) @watch', function () {
+    // signIn();
+    var getProject = server.execute( function() {
+            return Projects.findOne( { description: 'XYZ' } );
+          });
+    var projectId = getProject._id;
+    browser.url('localhost:3000/project/update/' + projectId);
+    browser.click('.autoform-remove-item');
+    browser.submitForm('#updateProjectForm');
+    var getProject = server.execute( function() {
+            return Projects.findOne( { description: 'XYZ' } );
+          });
+          expect ( getProject.skills[0] ).to.equal(null);
   });
 
   it('deletes a project @watch', function () {
