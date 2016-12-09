@@ -1,4 +1,4 @@
-import { signUp, signIn, logOut, cleanDatabase } from './helpers.js'
+import { signUp, signIn, logOut, cleanDatabase } from './helpers.js';
 
 describe('my module', function () {
   beforeEach(function () {
@@ -42,10 +42,10 @@ describe('Creating a profile', function() {
       });
       expect ( getProfile.bio ).to.equal( 'The best painter');
     });
-  // it('does not allow a user to create a new profile if it already exists @watch', function() {
-  //   browser.url('localhost:3000/profile/new');
-  //   expect(browser.getText('#profile-error').to.equal("You have already completed your profile"))
-  // });
+  it('does not allow a user to create a new profile if it already exists @watch', function() {
+    browser.url('localhost:3000/profile/new');
+    expect(browser.getText('#profile-error')).to.equal("You have already completed your profile");
+    });
   it('updates when users fill in the update profile form @watch', function() {
     browser.url('localhost:3000/profile/update');
     browser.setValue( '[name="bio"]', 'The worst painter' );
@@ -55,6 +55,5 @@ describe('Creating a profile', function() {
       return Profiles.findOne( { bio: 'The worst painter' } );
     });
     expect ( getProfile.bio ).to.equal( 'The worst painter');
-
   });
 });
