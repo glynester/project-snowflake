@@ -10,11 +10,12 @@
     <li>{{skill}}</li>
   {{/each}}
 </ul>
-  <div>
-    <button id="volunteer-for-project">Volunteer!</button>
-  </div>
   {{#if currentUserProject}}
-  <a href="/project/update/{{project._id}}">Update</a>
-  <button id="delete-project">Delete</button>
+    <a href="/project/update/{{project._id}}">Update</a>
+    <button id="delete-project">Delete</button>
+  {{else}}
+    <div>
+      <button id="volunteer-for-project">Volunteer!</button>
+    </div>
   {{/if}}
 </template>
