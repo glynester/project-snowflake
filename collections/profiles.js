@@ -31,8 +31,10 @@ ProfileSchema = new SimpleSchema({
     label: 'Location:'
   },
   skills: {
-    type: [Skills]
+    type: [Skills],
+    optional: true
   },
+
 });
 
 Profiles.attachSchema(ProfileSchema);
