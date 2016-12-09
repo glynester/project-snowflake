@@ -20,7 +20,7 @@
       <h3> You have no open projects, go create some! </h3>
 
   {{ else }}
-      <h3> Your projects: </h3>
+      <h3> Projects you've posted: </h3>
 
       {{#each usersProjects}}
       <ul>
@@ -31,4 +31,17 @@
       </ul>
       {{/each}}
   {{/if}}
+
+
+  <h3> Projects you've volunteered for: </h3>
+
+  {{#each volunteerProjects}}
+  <ul>
+    <li>
+      <p> Description: {{description}} </p>
+      <p> Date: {{date}} </p>
+    </li>
+  </ul>
+  {{/each}}
+>>>>>>> master
 </template>
