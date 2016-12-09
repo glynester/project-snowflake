@@ -34,6 +34,13 @@ ProfileSchema = new SimpleSchema({
     type: [Skills],
     optional: true
   },
+  projects: {
+    type: [String],
+    optional: true,
+    autoform: {
+      type: 'hidden'
+    }
+  }
 
 });
 

@@ -1,7 +1,7 @@
 <template name="Profile">
   <div class="profile-container">
-    <p> Bio: {{ profile.bio }} </p>
-    <p> Location: {{ profile.location}} </p>
+    <p id='Bio'> Bio: {{ profile.bio }} </p>
+    <p id='Location'> Location: {{ profile.location}} </p>
     Skills:
       <ul>
         {{#each profile.skills}}
@@ -9,13 +9,24 @@
         {{/each}}
     </ul>
     <form id="update-profile-button" action="/profile/update" method=get>
-       <input type="submit" value="Update profile">
+       <input id="Submit" type="submit" value="Update profile">
    </form>
   </div>
 
-  <h3> Your projects: </h3>
+  <h3> Projects you've posted: </h3>
 
   {{#each usersProjects}}
+  <ul>
+    <li>
+      <p> Description: {{description}} </p>
+      <p> Date: {{date}} </p>
+    </li>
+  </ul>
+  {{/each}}
+
+  <h3> Projects you've volunteered for: </h3>
+
+  {{#each volunteerProjects}}
   <ul>
     <li>
       <p> Description: {{description}} </p>
