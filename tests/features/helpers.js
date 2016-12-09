@@ -1,3 +1,6 @@
+// Command to run tests
+// chimp --ddp=http://localhost:3000 --watch --mocha --path=tests
+
 export function cleanDatabase() {
   server.execute(function () {
     Package['xolvio:cleaner'].resetDatabase();
