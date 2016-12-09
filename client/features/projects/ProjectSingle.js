@@ -20,6 +20,8 @@ Template.ProjectSingle.events({
   },
   'click #volunteer-for-project' (){
     var id = FlowRouter.getParam('id');
+    // var project = Projects.findOne({_id: id});
+    // var projectCreatedBy = project.created_by;
     var currentUserId = Meteor.userId();
     var profile = Profiles.findOne({created_by: currentUserId});
     var profile_id = profile._id

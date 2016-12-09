@@ -16,8 +16,14 @@ Template.Profile.helpers({
   usersProjects(){
     var currentUser = Meteor.userId();
     var listOfUserProjects = Projects.find({created_by: currentUser});
-    var allProjects = Projects.find({});
     return listOfUserProjects
+  },
+  volunteerProjects(){
+    var currentUser = Meteor.userId();
+    var userProfile = Profiles.findOne({created_by: currentUser});
+    var projectIds = userProfile.projects;
+    var listOfVolunteerProjects = Projects.find({_id: {$in: projectIds}});
+    return listOfVolunteerProjects
   },
 });
 Template.NewProfile.helpers({

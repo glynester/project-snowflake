@@ -12,7 +12,11 @@ ProjectsSchema = new SimpleSchema({
     label: 'Created by:',
     optional: true,
     autoValue: function() {
-      return this.userId;
+      if(this.isInsert) {
+        return this.userId;
+      } else {
+        this.unset();
+      }
     },
     autoform: {
       type: 'hidden'
