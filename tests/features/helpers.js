@@ -33,3 +33,16 @@ export function signIn(){
   browser.click('#login-buttons-password');
   browser.waitForExist('#login-name-link', 5000);
 };
+
+
+export function createproject() {
+  browser.url('localhost:3000/project/new');
+  browser.setValue( '[name="location"]', 'Twickenham' );
+  browser.setValue( '[name="description"]', 'Test Project' );
+  // browser.setValue( '[name="date"]', new Date() );
+  // browser.setValue( '[name="date"]', '28/12/2016, 10:30' );
+  browser.setValue( '[name="minPeople"]', '4' );
+  browser.setValue( '[name="maxPeople"]', '10' );
+  browser.setValue( '[name="skills.0.skill"]', 'Violin tuning' );;
+  browser.submitForm('#insertProjectForm');
+};
