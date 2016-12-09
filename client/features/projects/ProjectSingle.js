@@ -20,11 +20,11 @@ Template.ProjectSingle.events({
   },
   'click #volunteer-for-project' (){
     var id = FlowRouter.getParam('id');
-    var project = Projects.findOne({_id: id});
     var currentUserId = Meteor.userId();
-    console.log(project.skill)
-    console.log(project.volunteer)
-    // Projects.update-pushArray(project, { $set: { volunteers: currentUserId } });
+    var profile = Profiles.findOne({created_by: currentUserId});
+    var profile_id = profile._id
+    Projects.update({_id: id}, {$push: {volunteers: currentUserId}});
+    Profiles.update({_id: profile_id}, {$push: {projects: id}});
     FlowRouter.go('view-projects');
 
   }

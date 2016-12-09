@@ -6,12 +6,6 @@ Skills = new SimpleSchema({
   }
 });
 
-Volunteers = new SimpleSchema({
-  volunteer: {
-    type: String
-  }
-});
-
 ProjectsSchema = new SimpleSchema({
   created_by: {
     type: String,
@@ -68,7 +62,7 @@ ProjectsSchema = new SimpleSchema({
     type: [Skills]
   },
   volunteers: {
-    type: [Volunteers],
+    type: [String],
     optional: true,
     autoform: {
       type: "hidden"
