@@ -4,7 +4,7 @@ Template.ViewProjects.helpers({
   },
   noProjects(){
     var currentUser = Meteor.userId();
-    var listOfUserProjects = Projects.find({created_by: currentUser});
-    return listOfUserProjects.count() === 0;
+    var listOfProjects = Projects.find({});
+    return listOfProjects.count() === 0;
   },
 });

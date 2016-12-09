@@ -32,6 +32,11 @@
       {{/each}}
   {{/if}}
 
+  {{#if notVolunteering }}
+
+      <h3> You have no upcoming volunteer sessions, go find something local to get involved in! </h3>
+
+  {{ else }}
 
   <h3> Projects you've volunteered for: </h3>
 
@@ -43,5 +48,6 @@
     </li>
   </ul>
   {{/each}}
->>>>>>> master
+  {{/if}}
+
 </template>
