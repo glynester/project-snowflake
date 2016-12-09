@@ -1,12 +1,13 @@
 <template name="MainLayout">
   <header>
     <h1> Project Snowflake </h1>
-    {{> navigation}}
+    <!-- {{> navigation}} -->
   </header>
+
   <main class="main-layout">
     {{#if currentUser}}
     {{else}}
-      {{> register}}
+      <!-- {{> register}} -->
     {{/if}}
     {{> Header}}
     {{> SideNav}}

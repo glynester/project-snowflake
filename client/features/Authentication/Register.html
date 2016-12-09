@@ -1,0 +1,9 @@
+<template name="Register">
+  <div class="authentication-container">
+    {{#if currentUser}}
+        <p> You are already registered </p>
+    {{else}}
+        {{> register}}
+    {{/if}}
+  </div>
+</template>
