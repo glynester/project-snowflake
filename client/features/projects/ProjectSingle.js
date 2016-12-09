@@ -17,5 +17,15 @@ Template.ProjectSingle.events({
     Projects.remove({_id: id});
     FlowRouter.go('view-projects');
 
+  },
+  'click #volunteer-for-project' (){
+    var id = FlowRouter.getParam('id');
+    var project = Projects.findOne({_id: id});
+    var currentUserId = Meteor.userId();
+    console.log(project.skill)
+    console.log(project.volunteer)
+    // Projects.update-pushArray(project, { $set: { volunteers: currentUserId } });
+    FlowRouter.go('view-projects');
+
   }
 });
