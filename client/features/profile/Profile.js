@@ -38,6 +38,13 @@ Template.NewProfile.helpers({
   },
 });
 
+Template.NewProfile.events({
+  'submit #insertProfileForm'(event) {
+    FlowRouter.go('main');
+  },
+
+});
+
 Template.UpdateProfile.events({
   'submit #updateProfileForm'(event) {
     var currentUser = Meteor.userId();
