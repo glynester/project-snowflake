@@ -4,9 +4,9 @@
       <p> Please sign up to create a profile </p>
     {{else}}
        {{#if userHasProfile }}
-         <p> You have already completed your profile </p>
+         <p id="profile-error"> You have already completed your profile </p>
          <form id="update-profile-button" action="/profile/update" method=get>
-            <input type="submit" value="Update profile">
+            <input id="Submit" type="submit" value="Update profile">
         </form>
         {{else}}
             {{> quickForm collection="Profiles" id="insertProfileForm" type="insert" class="profile-form"}}
