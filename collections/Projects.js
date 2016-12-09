@@ -22,6 +22,13 @@ ProjectsSchema = new SimpleSchema({
       type: 'hidden'
     }
   },
+  status: {
+    type: Number,
+    defaultValue: 1,
+    autoform: {
+      type: "hidden"
+    }
+  },
   location: {
     type: String,
     label: 'Location:'

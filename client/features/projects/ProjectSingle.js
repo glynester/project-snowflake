@@ -8,7 +8,39 @@ Template.ProjectSingle.helpers({
         var projectId = FlowRouter.getParam('id');
         var currentProject = Projects.findOne({_id: projectId});
         return currentProject.created_by === currentUserId;
-    }
+    },
+    getStatus: () => {
+      var projectId = FlowRouter.getParam('id');
+      var currentProject = Projects.findOne({_id: projectId});
+      switch (currentProject.status) {
+        case 0:
+        return "More volunteers needed";
+        break;
+        case 1:
+        return "Going ahead - more spaces available";
+        break;
+        case 2:
+        return "Going ahead - no spaces left";
+        break;
+        case 3:
+        return "Taken place";
+        break;
+        case 4:
+        return "Abandoned";
+        break;
+      }
+    },
+    volunteersRequired: () => {
+        var id = FlowRouter.getParam('id');
+        project = Projects.findOne({_id: id});
+        if (project.volunteers === undefined) {
+          var heads = project.minPeople
+        } else {
+          var heads = project.minPeople - project.volunteers.length
+        }
+        return heads
+    },
+
 });
 
 Template.ProjectSingle.events({
