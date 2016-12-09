@@ -7,20 +7,39 @@ describe('my module', function () {
 });
 
 
-describe('Add Project', function() {
-  it('It should go to path project/new @watch', function () {
+describe('Project', function() {
+  it('adds a project @watch', function () {
     signIn();
     browser.url('localhost:3000/project/new');
-    browser.setValue( '[name="location"]', 'Twickenham' );
-    browser.setValue( '[name="description"]', 'test project' );
-    // browser.setValue( '[name="date"]', new Date().getTime() );
+    browser.setValue( '[name="location"]', 'Twickenhammy' );
+    browser.setValue( '[name="description"]', 'test projecty' );
+    // browser.setValue( '[name="date"]', new Date() );
+    // browser.setValue( '[name="date"]', '28/12/2016, 10:30' );
     browser.setValue( '[name="minPeople"]', '4' );
     browser.setValue( '[name="maxPeople"]', '10' );
-    browser.setValue( '[name="skills.0.skill"]', 'leaf blowing' );
-    browser.click('.btn-primary');
-    browser.url('localhost:3000/projects');
-    expect(browser.getText('.projects')).to.equal("test project");
+    browser.setValue( '[name="skills.0.skill"]', 'leaf blowing' );;
+    browser.submitForm('#insertProjectForm');
+    var getProject = server.execute( function() {
+            return Projects.findOne( { description: 'test projecty' } );
+          });
+          expect ( getProject.description ).to.equal( 'test projecty');
+  });
 
-    //expect(browser.getUrl()).to.equal("http://localhost:3000/project/new");
+
+  it('amends a project @watch', function () {
+    // signIn();
+    browser.url('localhost:3000/project/new');
+    browser.setValue( '[name="location"]', 'Twickenhammy' );
+    browser.setValue( '[name="description"]', 'test projecty' );
+    // browser.setValue( '[name="date"]', new Date() );
+    // browser.setValue( '[name="date"]', '28/12/2016, 10:30' );
+    browser.setValue( '[name="minPeople"]', '4' );
+    browser.setValue( '[name="maxPeople"]', '10' );
+    browser.setValue( '[name="skills.0.skill"]', 'leaf blowing' );;
+    browser.submitForm('#insertProjectForm');
+    var getProject = server.execute( function() {
+            return Projects.findOne( { description: 'test projecty' } );
+          });
+          expect ( getProject.description ).to.equal( 'test projecty');
   });
 });
