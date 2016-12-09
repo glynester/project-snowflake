@@ -1,7 +1,7 @@
 <template name="NewProfile">
   <div class="new-profile-container">
     {{#if userSignedIn }}
-      <p> Please sign up to create a profile </p>
+      <p id="profile-error"> Please sign up to create a profile </p>
     {{else}}
        {{#if userHasProfile }}
          <p> You have already completed your profile </p>

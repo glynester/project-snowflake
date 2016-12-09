@@ -31,7 +31,6 @@ describe('Signing in', function() {
 describe('Creating a profile', function() {
     it('takes the user to the new profile page @watch', function () {
       browser.url('localhost:3000/profile/new');
-      browser.waitForExist('.btn-primary', 5000);
       browser.setValue( '[name="bio"]', 'The best painter' );
       browser.setValue( '[name="location"]', 'London' );
       browser.setValue( '[name="skills.0.skill"]', 'Painting' );
@@ -42,11 +41,20 @@ describe('Creating a profile', function() {
         return Profiles.findOne( { bio: 'The best painter' } );
       });
       expect ( getProfile.bio ).to.equal( 'The best painter');
-
-
-//
-//
-//       expect(browser.text.to.equal('Bio: The best painter');
-//       expect(browser.text('#Location')).to.equal('Location: London');
     });
+  // it('does not allow a user to create a new profile if it already exists @watch', function() {
+  //   browser.url('localhost:3000/profile/new');
+  //   expect(browser.getText('#profile-error').to.equal("You have already completed your profile"))
+  // });
+  it('updates when users fill in the update profile form @watch', function() {
+    browser.url('localhost:3000/profile/update');
+    browser.setValue( '[name="bio"]', 'The worst painter' );
+    browser.submitForm('#updateProfileForm');
+
+    var getProfile = server.execute( function() {
+      return Profiles.findOne( { bio: 'The worst painter' } );
+    });
+    expect ( getProfile.bio ).to.equal( 'The worst painter');
+
+  });
 });
