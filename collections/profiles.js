@@ -1,5 +1,14 @@
 Profiles = new Mongo.Collection('profiles')
 
+Profiles.allow({
+	insert: function(userId, doc) {
+		return !!userId;
+	},
+	update: function(userId, doc) {
+		return !!userId;
+	}
+});
+
 
 Skills = new SimpleSchema({
   skill: {
