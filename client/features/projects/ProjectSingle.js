@@ -46,9 +46,8 @@ Template.ProjectSingle.helpers({
 Template.ProjectSingle.events({
   'click #delete-project' (){
     var id = FlowRouter.getParam('id');
-    Projects.remove({_id: id});
+    Meteor.call('deleteProject', id)
     FlowRouter.go('view-projects');
-
   },
   'click #volunteer-for-project' (){
     var id = FlowRouter.getParam('id');
@@ -57,9 +56,8 @@ Template.ProjectSingle.events({
     var currentUserId = Meteor.userId();
     var profile = Profiles.findOne({created_by: currentUserId});
     var profile_id = profile._id
-    Projects.update({_id: id}, {$push: {volunteers: currentUserId}});
-    Profiles.update({_id: profile_id}, {$push: {projects: id}});
+    Meteor.call('updateUsersProjects', profile_id, id);
+    Meteor.call('updateProjectVolunteers', id, currentUserId);
     FlowRouter.go('view-projects');
-
   }
 });
