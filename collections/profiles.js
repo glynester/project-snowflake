@@ -1,5 +1,6 @@
 Profiles = new Mongo.Collection('profiles')
 
+
 Skills = new SimpleSchema({
   skill: {
     type: String
