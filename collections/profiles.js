@@ -12,7 +12,8 @@ Profiles.allow({
 
 Skills = new SimpleSchema({
   skill: {
-    type: String
+    type: String,
+		unique: true
   }
 });
 

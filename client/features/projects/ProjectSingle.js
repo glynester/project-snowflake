@@ -40,6 +40,12 @@ Template.ProjectSingle.helpers({
         }
         return heads
     },
+    alreadyVolunteered: () => {
+      var id = FlowRouter.getParam('id');
+      var project = Projects.findOne({_id: id});
+      var currentUserId = Meteor.userId();
+      return project.volunteers.indexOf(currentUserId) > -1;
+    },
 
 });
 
@@ -51,13 +57,29 @@ Template.ProjectSingle.events({
   },
   'click #volunteer-for-project' (){
     var id = FlowRouter.getParam('id');
-    // var project = Projects.findOne({_id: id});
+    var project = Projects.findOne({_id: id});
     // var projectCreatedBy = project.created_by;
     var currentUserId = Meteor.userId();
     var profile = Profiles.findOne({created_by: currentUserId});
     var profile_id = profile._id
-    Meteor.call('updateUsersProjects', profile_id, id);
-    Meteor.call('updateProjectVolunteers', id, currentUserId);
+    if (project.volunteers === undefined ){
+      Meteor.call('updateUsersProjects', profile_id, id);
+      Meteor.call('updateProjectVolunteers', id, currentUserId);
+    } else if (project.volunteers.indexOf(currentUserId) > -1){
+    } else {
+      Meteor.call('updateUsersProjects', profile_id, id);
+      Meteor.call('updateProjectVolunteers', id, currentUserId);
+    };
+    FlowRouter.go('view-projects');
+  },
+  'click #unvolunteer' (){
+    var id = FlowRouter.getParam('id');
+    var project = Projects.findOne({_id: id});
+    var currentUserId = Meteor.userId();
+    var profile = Profiles.findOne({created_by: currentUserId});
+    var profile_id = profile._id;
+    Meteor.call('removeProjectfromProfile', profile_id, id);
+    Meteor.call('removeUserFromProject', id, currentUserId);
     FlowRouter.go('view-projects');
   }
 });
