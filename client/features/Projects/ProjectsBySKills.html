@@ -1,9 +1,9 @@
-<template name="ViewProjects">
+<template name="ProjectsBySkills">
   <div class="projects">
+    <button id="no-filter">Show me everything</button> <button id="filter-by-location">My location</button>
 
-    <button id="filter-by-skills">My skills</button> <button id="filter-by-location">My location</button>
     {{#if noProjects }}
-    <h3> Be the first to start a project </h3>
+    <h3> Nothing matches your skills yet, add more or go start something that does! </h3>
     {{ else }}
         <ul>
         {{#each projects}}

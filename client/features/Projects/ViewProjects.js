@@ -8,3 +8,9 @@ Template.ViewProjects.helpers({
     return listOfProjects.count() === 0;
   },
 });
+
+Template.ViewProjects.events({
+  'click #filter-by-skills'(event) {
+    FlowRouter.go('filtered-by-skills');
+  },
+});
