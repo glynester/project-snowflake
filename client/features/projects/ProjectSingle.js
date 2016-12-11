@@ -64,14 +64,12 @@ Template.ProjectSingle.helpers({
   },
 
   spacesLeftBoolean: () => {
-    console.log( "WWWWAHHHh")
     if (currentProject().volunteers === undefined){
       return true
     } else {
       return currentProject().volunteers.length < currentProject().maxPeople;
     }
   },
-
 
   alreadyVolunteered: () => {
     return currentProject().volunteers.indexOf(currentUserId()) > -1;
