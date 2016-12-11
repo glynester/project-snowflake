@@ -64,7 +64,12 @@ Template.ProjectSingle.helpers({
   },
 
   spacesLeftBoolean: () => {
-    return currentProject().volunteers.length < currentProject().maxPeople
+    console.log( "WWWWAHHHh")
+    if (currentProject().volunteers === undefined){
+      return true
+    } else {
+      return currentProject().volunteers.length < currentProject().maxPeople;
+    }
   },
 
 
@@ -85,7 +90,7 @@ Template.ProjectSingle.events({
     if (currentProject().volunteers === undefined ){
       var volunteers = 1
       Meteor.call('updateUsersProjects', profile_id, id);
-      Meteor.call('updateProjectVolunteers', id, currentUserId, project, volunteers);
+      Meteor.call('updateProjectVolunteers', id, currentUserId(), currentProject(), volunteers);
     } else if (currentProject().volunteers.indexOf(currentUserId) > -1){
     } else {
       var volunteers = currentProject().volunteers.length + 1
