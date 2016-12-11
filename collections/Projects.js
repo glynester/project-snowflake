@@ -36,7 +36,7 @@ ProjectsSchema = new SimpleSchema({
   },
   status: {
     type: Number,
-    defaultValue: 1,
+    defaultValue: 0,
     autoform: {
       type: "hidden"
     }

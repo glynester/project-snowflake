@@ -1,7 +1,11 @@
 <template name='ProjectSingle'>
   <p>Description: {{project.description}}</p>
-  <p>Status: {{getStatus}}</p>
-  <p>Spaces left: {{ volunteersRequired }}</p>
+  <p>Status: {{ getStatus}}</p>
+  {{ #if goingAhead }}
+    <p>Spaces left: {{ spacesLeft }}</p>
+  {{ else }}
+  <p>Volunteers required: {{ volunteersRequired }}</p>
+  {{ /if }}
   <p>Location: {{project.location}}</p>
   <p>Date and time: {{project.date}}</p>
   <p>Skills:</p>
@@ -13,13 +17,14 @@
   {{ #if currentUserProject }}
     <a href="/project/update/{{project._id}}">Update</a>
     <button id="delete-project">Delete</button>
-  {{ else }}
+  {{ /if }}
       {{ #if alreadyVolunteered }}
       <button id="unvolunteer">Withdraw</button>
       {{ else }}
-    <div>
-      <button id="volunteer-for-project">Volunteer!</button>
-    </div>
-  {{/if}}
+        {{ #if spacesLeftBoolean}}
+          <div>
+            <button id="volunteer-for-project">Volunteer!</button>
+          </div>
+        {{ /if}}
   {{/if}}
 </template>
