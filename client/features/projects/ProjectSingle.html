@@ -17,7 +17,7 @@
   {{ #if currentUserProject }}
     <a href="/project/update/{{project._id}}">Update</a>
     <button id="delete-project">Delete</button>
-  {{ /if }}
+  {{ else }}
       {{ #if alreadyVolunteered }}
       <button id="unvolunteer">Withdraw</button>
       {{ else }}
@@ -26,5 +26,6 @@
             <button id="volunteer-for-project">Volunteer!</button>
           </div>
         {{ /if}}
+      {{ /if }}
   {{/if}}
 </template>
