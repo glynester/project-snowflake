@@ -1,21 +1,31 @@
 <template name='ProjectSingle'>
   <p>Description: {{project.description}}</p>
-  <p>Status: {{getStatus}}</p>
-  <p>Spaces left: {{ volunteersRequired }}</p>
+  <p>Status: {{ getStatus}}</p>
+  {{ #if goingAhead }}
+    <p>Spaces left: {{ spacesLeft }}</p>
+  {{ else }}
+  <p>Volunteers required: {{ volunteersRequired }}</p>
+  {{ /if }}
   <p>Location: {{project.location}}</p>
   <p>Date and time: {{project.date}}</p>
   <p>Skills:</p>
   <ul>
-  {{#each project.skills}}
-    <li>{{skill}}</li>
-  {{/each}}
+  {{ #each project.skills }}
+    <li>{{ skill }}</li>
+  {{ /each }}
 </ul>
-  {{#if currentUserProject}}
+  {{ #if currentUserProject }}
     <a href="/project/update/{{project._id}}">Update</a>
     <button id="delete-project">Delete</button>
-  {{else}}
-    <div>
-      <button id="volunteer-for-project">Volunteer!</button>
-    </div>
+  {{ else }}
+      {{ #if alreadyVolunteered }}
+      <button id="unvolunteer">Withdraw</button>
+      {{ else }}
+        {{ #if spacesLeftBoolean}}
+          <div>
+            <button id="volunteer-for-project">Volunteer!</button>
+          </div>
+        {{ /if}}
+      {{ /if }}
   {{/if}}
 </template>
