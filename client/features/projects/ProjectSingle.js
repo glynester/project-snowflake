@@ -74,6 +74,10 @@ Template.ProjectSingle.helpers({
   alreadyVolunteered: () => {
     return currentProject().volunteers.indexOf(currentUserId()) > -1;
   },
+  userSignedIn(){
+    var currentUser = Meteor.userId();
+    return !!currentUser
+  },
 });
 
 Template.ProjectSingle.events({

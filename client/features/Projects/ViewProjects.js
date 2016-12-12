@@ -7,6 +7,10 @@ Template.ViewProjects.helpers({
     var listOfProjects = Projects.find({});
     return listOfProjects.count() === 0;
   },
+  userSignedIn(){
+    var currentUser = Meteor.userId();
+    return !!currentUser
+  },
 });
 
 Template.ViewProjects.events({
