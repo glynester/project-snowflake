@@ -38,3 +38,5 @@ matb33:bootstrap-glyphicons
 zimme:active-route
 gwendall:auth-client-callbacks
 datariot:ganalytics
+cfs:standard-packages
+cfs:gridfs

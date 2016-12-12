@@ -51,8 +51,14 @@ ProfileSchema = new SimpleSchema({
     autoform: {
       type: 'hidden'
     }
+  },
+  image: {
+    type: String,
+    optional: true,
+    autoform: {
+      type: 'hidden'
+    }
   }
-
 });
 
 Profiles.attachSchema(ProfileSchema);

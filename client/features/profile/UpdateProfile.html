@@ -1,5 +1,9 @@
 <template name="UpdateProfile">
   <div class="update-profile-container">
     {{> quickForm collection="Profiles" doc=getUserProfile id="updateProfileForm" type="update" class="profile-form"}}
+    <form id='profileImageUpload'>
+      <input type="file" name="profileImage">
+      <input type='submit' value='Submit'/>
+    </form>
   </div>
 </template>

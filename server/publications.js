@@ -8,3 +8,7 @@ Meteor.publish('projects', function(){
 Meteor.publish('profiles', function(){
     return Profiles.find({});
 });
+
+Meteor.publish('images', function(){
+    return Images.find({});
+});
