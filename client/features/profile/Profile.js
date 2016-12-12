@@ -7,7 +7,20 @@ Template.UpdateProfile.helpers({
   },
 });
 
+Template.imageView.helpers({
+  images: function () {
+    // var currentUser = Meteor.userId();
+    // var userProfile = Profiles.findOne({created_by: currentUser});
+    // var imageId = userProfile.profileimage
+    // var x = Images.find({_id: imageId});
+    // console.log(x);
+    // return Images.find({_id: imageId});
+    return Images.find();
+  }
+});
+
 Template.Profile.helpers({
+
   profile(){
     var currentUser = Meteor.userId();
     var userProfile = Profiles.findOne({created_by: currentUser});

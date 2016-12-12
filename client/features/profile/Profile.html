@@ -1,7 +1,7 @@
 <template name="Profile">
   <div class="profile-container">
 
-
+    <p id='Bioimage'>{{> imageView }} </p>
     <p id='Bio'> Bio: {{ profile.bio }} </p>
     <p id='Location'> Location: {{ profile.location}} </p>
     Skills:
@@ -53,4 +53,15 @@
 
   {{/if}}
 
+</template>
+
+
+<template name="imageView">
+  <div class="imageView">
+    {{#each images}}
+      <div>
+        <img src="{{this.url store='images' }}" alt="" class="thumbnail" />
+      </div>
+    {{/each}}
+  </div>
 </template>
