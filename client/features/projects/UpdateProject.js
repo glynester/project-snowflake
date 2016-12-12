@@ -10,6 +10,7 @@ Template.UpdateProject.events({
     var id = FlowRouter.getParam('id');
     var project =  Projects.findOne({_id: id});
     Meteor.call('setProjectStatus', project);
+    Meteor.call('deleteNullProjSkills', project);
     FlowRouter.go('view-projects');
   },
 });
