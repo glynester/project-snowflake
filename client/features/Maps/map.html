@@ -1,0 +1,13 @@
+<template name="map">
+
+  <div class="map-container" style="height:100%">
+    <iframe
+  width="500"
+  height="350"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAqB3snrGRRRSgCH2B6ymISjj59hBRaE2I
+    &q={{getCoOrdinates}}" allowfullscreen>
+</iframe>
+    {{> googleMap name="map" options=mapOptions}}
+  </div>
+</template>

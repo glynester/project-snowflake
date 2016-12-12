@@ -17,4 +17,7 @@ Template.ViewProjects.events({
   'click #filter-by-skills'(event) {
     FlowRouter.go('filtered-by-skills');
   },
+  'click #filter-by-location'(event) {
+    FlowRouter.go('filtered-by-location');
+  },
 });

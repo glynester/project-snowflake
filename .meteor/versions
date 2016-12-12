@@ -44,6 +44,7 @@ check@1.2.4
 coffeescript@1.0.17
 datariot:ganalytics@0.2.1
 dburles:collection-helpers@1.1.0
+dburles:google-maps@1.1.5
 ddp@1.2.5
 ddp-client@1.2.9
 ddp-common@1.2.8

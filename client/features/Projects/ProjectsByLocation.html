@@ -1,0 +1,23 @@
+<template name="ProjectsByLocation">
+  <div class="projects">
+    <button id="no-filter">Show me everything</button> <button id="filter-by-skills">My skills</button>
+
+    {{>mapmap}}
+
+    {{#if noProjects }}
+    <h3> Nothing matches your skills yet, add more or go start something that does! </h3>
+    {{ else }}
+        <ul>
+        {{#each projects}}
+          <li><a href="/project/{{_id}}">{{description}}, {{location}}</a></li>
+        {{/each}}
+        </ul>
+    {{ /if }}
+  </div>
+</template>
+
+<template name="mapmap">
+  <div class="map-container">
+    {{> googleMap name="map" options=mapOptions}}
+  </div>
+</template>
