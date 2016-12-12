@@ -52,11 +52,13 @@ ProfileSchema = new SimpleSchema({
       type: 'hidden'
     }
   },
-  image: {
+  profileimage: {
     type: String,
-    optional: true,
     autoform: {
-      type: 'hidden'
+      afFieldInput: {
+        type: "cfs-file",
+        collection: "images"
+      }
     }
   }
 });

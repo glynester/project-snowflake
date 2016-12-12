@@ -65,25 +65,25 @@ Template.UpdateProfile.events({
     Meteor.call('deleteNullSkills', userProfile, skills);
     FlowRouter.go('profile');
   },
-  'submit #profileImageUpload'(event) {
-      console.log('top level');
-      var files = event.target.files;
-      console.log(files);
-      for (var i = 0, ln = files.length; i < ln; i++) {
-        Images.insert(files[i], function (err, fileObj) {
-          if (err){
-             console.log('error happened');
-          } else {
-            console.log('this happened');
-            var currentUser = Meteor.userId();
-            var userProfile = Profiles.findOne({created_by: currentUser});
-            var userProfileId = userProfile._id;
-            var imagesURL = {
-              image: "/cfs/files/images/" + fileObj._id
-            };
-            Profiles.update(userProfileId, {$set: imagesURL});
-          }
-        });
-     };
-   }
+  // 'submit #profileImageUpload'(event) {
+  //     console.log('top level');
+  //     var files = event.target.files;
+  //     console.log(files);
+  //     for (var i = 0, ln = files.length; i < ln; i++) {
+  //       Images.insert(files[i], function (err, fileObj) {
+  //         if (err){
+  //            console.log('error happened');
+  //         } else {
+  //           console.log('this happened');
+  //           var currentUser = Meteor.userId();
+  //           var userProfile = Profiles.findOne({created_by: currentUser});
+  //           var userProfileId = userProfile._id;
+  //           var imagesURL = {
+  //             image: "/cfs/files/images/" + fileObj._id
+  //           };
+  //           Profiles.update(userProfileId, {$set: imagesURL});
+  //         }
+  //       });
+  //    };
+  //  }
 });
