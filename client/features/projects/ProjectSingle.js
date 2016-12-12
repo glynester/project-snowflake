@@ -94,7 +94,7 @@ Template.ProjectSingle.events({
       Meteor.call('updateUsersProjects', profile_id, id);
       Meteor.call('updateProjectVolunteers', id, currentUserId(), currentProject(), volunteers);
       Meteor.call('sendEmail',
-                  'bakerje@mac.com',
+                  Meteor.user().emails[0].address,
                   'Hello from Snowflake!',
                   'You\'ve volunteered for a new project!!');
     } else if (currentProject().volunteers.indexOf(currentUserId) > -1){
@@ -103,7 +103,7 @@ Template.ProjectSingle.events({
       Meteor.call('updateUsersProjects', profile_id, id);
       Meteor.call('updateProjectVolunteers', id, currentUserId(), currentProject(), volunteers);
       Meteor.call('sendEmail',
-                  'bakerje@mac.com',
+                  Meteor.user().emails[0].address,
                   'Hello from Snowflake!',
                   'You\'ve volunteered for a new project!!');
     };
