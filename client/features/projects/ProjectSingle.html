@@ -14,18 +14,20 @@
     <li>{{ skill }}</li>
   {{ /each }}
 </ul>
-  {{ #if currentUserProject }}
-    <a href="/project/update/{{project._id}}">Update</a>
-    <button id="delete-project">Delete</button>
-  {{ else }}
-      {{ #if alreadyVolunteered }}
-      <button id="unvolunteer">Withdraw</button>
+{{ #if userSignedIn }}
+      {{ #if currentUserProject }}
+        <a href="/project/update/{{project._id}}">Update</a>
+        <button id="delete-project">Delete</button>
       {{ else }}
-        {{ #if spacesLeftBoolean}}
-          <div>
-            <button id="volunteer-for-project">Volunteer!</button>
-          </div>
-        {{ /if}}
-      {{ /if }}
-  {{/if}}
+          {{ #if alreadyVolunteered }}
+          <button id="unvolunteer">Withdraw</button>
+          {{ else }}
+            {{ #if spacesLeftBoolean}}
+              <div>
+                <button id="volunteer-for-project">Volunteer!</button>
+              </div>
+            {{ /if}}
+          {{ /if }}
+      {{/if}}
+{{/if}}
 </template>
