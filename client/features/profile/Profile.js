@@ -12,10 +12,7 @@ Template.imageView.helpers({
     var currentUser = Meteor.userId();
     var userProfile = Profiles.findOne({created_by: currentUser});
     var imageId = userProfile.profileimage
-    // var x = Images.find({_id: imageId});
-    // console.log(x);
     return Images.findOne({_id: imageId});
-    // return Images.find();
   }
 });
 
