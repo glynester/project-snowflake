@@ -42,3 +42,7 @@ cfs:standard-packages
 cfs:gridfs
 cfs:autoform
 cfs:graphicsmagick
+accounts-base
+ian:bootstrap-3
+email
+check
