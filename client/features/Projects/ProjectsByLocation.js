@@ -35,12 +35,30 @@ Template.mapmap.helpers({
     var longAndLat =  long.map(Number);
     console.log(longAndLat[0]);
     if (GoogleMaps.loaded()) {
-      return {
+      var map = {
         center: new google.maps.LatLng(longAndLat[0],longAndLat[1]),
         zoom: 8
       };
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(longAndLat[0],longAndLat[1]),
+        map: map
+      });
+
     }
+    return map
+    console.log(marker)
   }
+});
+
+Template.body.onCreated(function() {
+  // We can use the `ready` callback to interact with the map API once the map is ready.
+  GoogleMaps.ready('map', function(map) {
+    // Add a marker to the map once it's ready
+    var marker = new google.maps.Marker({
+      position: map.options.center,
+      map: map.instance
+    });
+  });
 });
 
 Meteor.startup(function() {
