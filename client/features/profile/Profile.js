@@ -54,6 +54,10 @@ Template.NewProfile.helpers({
 Template.NewProfile.events({
   'submit #insertProfileForm'(event) {
     FlowRouter.go('main');
+    Meteor.call('sendEmail',
+                'bakerje@mac.com',
+                'Hello from Snowflake!',
+                'You\'ve added a new profile!!');
   },
 
 });
