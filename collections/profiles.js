@@ -51,8 +51,16 @@ ProfileSchema = new SimpleSchema({
     autoform: {
       type: 'hidden'
     }
+  },
+  profileimage: {
+    type: String,
+    autoform: {
+      afFieldInput: {
+        type: "cfs-file",
+        collection: "images"
+      }
+    }
   }
-
 });
 
 Profiles.attachSchema(ProfileSchema);

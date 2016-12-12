@@ -78,6 +78,14 @@ Template.ProjectSingle.helpers({
     var currentUser = Meteor.userId();
     return !!currentUser
   },
+  userImages: () => {
+    var volunteerIds = currentProject().volunteers;
+    return volunteerIds.map(function(id) {
+      var profile = Profiles.findOne({created_by: id});
+      var imageId = profile.profileimage;
+      return Images.findOne({_id: imageId});
+    });
+  }
 });
 
 Template.ProjectSingle.events({

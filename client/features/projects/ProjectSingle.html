@@ -13,7 +13,13 @@
   {{ #each project.skills }}
     <li>{{ skill }}</li>
   {{ /each }}
-</ul>
+  </ul>
+  <p class='userProfileImages'>
+    {{#each userImages}}
+        <img src="{{this.url store='thumbs' }}" alt="" class="thumbImage" />
+    {{/each}}
+  </p>
+
 {{ #if userSignedIn }}
       {{ #if currentUserProject }}
         <a href="/project/update/{{project._id}}">Update</a>

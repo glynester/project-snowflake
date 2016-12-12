@@ -38,6 +38,10 @@ matb33:bootstrap-glyphicons
 zimme:active-route
 gwendall:auth-client-callbacks
 datariot:ganalytics
+cfs:standard-packages
+cfs:gridfs
+cfs:autoform
+cfs:graphicsmagick
 accounts-base
 ian:bootstrap-3
 email
