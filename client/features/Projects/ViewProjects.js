@@ -25,8 +25,6 @@ Template.ViewProjects.helpers({
     var lat2 = destinationLongLat[1];
     var lon1 =  originLongLat[0];
     var lon2 = destinationLongLat[0];
-
-
     var R = 6371; // Radius of the earth in km
     var dLat = deg2rad(lat2-lat1);  // deg2rad below
     var dLon = deg2rad(lon2-lon1);

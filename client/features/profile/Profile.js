@@ -115,7 +115,7 @@ Template.profileMap.helpers({
     if (GoogleMaps.loaded()) {
       var map = {
         center: new google.maps.LatLng(longAndLat[0],longAndLat[1]),
-        zoom:15
+        zoom:13
       };
     }
     return map
