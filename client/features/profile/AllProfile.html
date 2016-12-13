@@ -1,6 +1,5 @@
 <template name="AllProfile">
   <div class="profile-container">
-
     <p id='Bioimage'>{{> AllimageView }} </p>
     <p id='Bio'> Bio: {{ getUserProfile.bio }} </p>
     <p id='Location'> Location: {{ getUserProfile.location}} </p>
@@ -10,11 +9,10 @@
           <li> {{ skill }} </li>
         {{/each}}
     </ul>
-    <!-- <form id="update-profile-button" action="/profile/update" method=get>
-       <input id="Submit" type="submit" value="Update profile">
-   </form> -->
+   <form>
+     <input type="button" value="Back" onClick="history.go(-1);return true;">
+   </form>
   </div>
-
   </template>
 
 

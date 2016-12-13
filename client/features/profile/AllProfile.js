@@ -4,7 +4,7 @@ Template.AllProfile.helpers({
     var profile = FlowRouter.getParam("id");
     var userProfile = Profiles.findOne({_id: profile});
     return userProfile;
-  },
+  }
 });
 
 Template.AllimageView.helpers({
