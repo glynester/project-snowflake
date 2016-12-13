@@ -17,12 +17,10 @@ Template.ProjectsBySkills.helpers({
     var currentUser = Profiles.findOne({created_by: Meteor.userId()});
     var origin = currentUser.location;
     var destination = destination;
-    var originLongLat = origin.split(",");
-    var destinationLongLat = destination.split(",");
-    var lat1 = originLongLat[1];
-    var lat2 = destinationLongLat[1];
-    var lon1 =  originLongLat[0];
-    var lon2 = destinationLongLat[0];
+    var lat1 = origin[1];
+    var lat2 = destination[1];
+    var lon1 =  origin[0];
+    var lon2 = destination[0];
     var R = 6371; // Radius of the earth in km
     var dLat = deg2rad(lat2-lat1);  // deg2rad below
     var dLon = deg2rad(lon2-lon1);

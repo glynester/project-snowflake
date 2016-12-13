@@ -132,11 +132,9 @@ Template.projectListingMap.helpers({
     var projectId = FlowRouter.getParam('id');
     var project = Projects.findOne({_id: projectId});
     var location = project.location;
-    var long = location.split(",");
-    var longAndLat =  long.map(Number);
     if (GoogleMaps.loaded()) {
       var map = {
-        center: new google.maps.LatLng(longAndLat[0],longAndLat[1]),
+        center: new google.maps.LatLng(location[1],location[0]),
         zoom:13
       };
     }
@@ -150,11 +148,9 @@ Template.projectListingMap.onCreated(function() {
     var projectId = FlowRouter.getParam('id');
     var project = Projects.findOne({_id: projectId});
     var location = project.location;
-    var long = location.split(",");
-    var longAndLat =  long.map(Number);
 
     marker = new google.maps.Marker({
-      position: new google.maps.LatLng(longAndLat[0], longAndLat[1]),
+      position: new google.maps.LatLng(location[1], location[0]),
       map: map.instance
     });
   });

@@ -18,12 +18,10 @@ Template.ProjectsByLocation.helpers({
     var currentUser = Profiles.findOne({created_by: Meteor.userId()});
     var origin = currentUser.location;
     var destination = destination;
-    var originLongLat = origin.split(",");
-    var destinationLongLat = destination.split(",");
-    var lat1 = originLongLat[1];
-    var lat2 = destinationLongLat[1];
-    var lon1 =  originLongLat[0];
-    var lon2 = destinationLongLat[0];
+    var lat1 = origin[1];
+    var lat2 = destination[1];
+    var lon1 =  origin[0];
+    var lon2 = destination[0];
     var R = 6371; // Radius of the earth in km
     var dLat = deg2rad(lat2-lat1);  // deg2rad below
     var dLon = deg2rad(lon2-lon1);
@@ -54,11 +52,9 @@ Template.mapmap.helpers({
     var id = Meteor.userId();
     var profile = Profiles.findOne({created_by: id});
     var location = profile.location;
-    var long = location.split(",");
-    var longAndLat =  long.map(Number);
     if (GoogleMaps.loaded()) {
       var map = {
-        center: new google.maps.LatLng(longAndLat[0],longAndLat[1]),
+        center: new google.maps.LatLng(location[1],location[0]),
         zoom:12
       };
 
@@ -81,7 +77,7 @@ Template.mapmap.onCreated(function() {
   GoogleMaps.ready('map', function(map) {
     for (i = 0; i < locations.length; i++) {
       marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i].split(",")[0], locations[i].split(",")[1]),
+        position: new google.maps.LatLng(locations[i][1], locations[i][0]),
         map: map.instance
       });
       google.maps.event.addListener(marker, 'click', (function(marker, i) {

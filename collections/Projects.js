@@ -42,7 +42,8 @@ ProjectsSchema = new SimpleSchema({
     }
   },
 	location: {
-    type: String,
+		type: [Number],
+		decimal: true,
     label: 'Location:',
     autoform: {
       type: 'map',
