@@ -15,14 +15,8 @@
   {{ /each }}
   </ul>
   <p class='userProfileImages'>
-    <!-- {{#each userImages}}
-        <img src="{{this.url store='thumbs' }}" alt="" class="thumbImage" />
-    {{/each}} -->
-     <!-- {{#for i=0 i<userImages.length i++}} -->
      {{#each userImages}}
-     <!-- {{#var image=this[1]}} -->
-      <img src="{{image.url store='thumbs' }}" alt="" class="thumbImage" />
-      <!-- <p>Hello</p> -->
+      <a href="/profile/{{profile._id}}"><img src="{{image.url store='thumbs' }}" alt="" class="thumbImage"></a>
     {{/each}}
   </p>
 

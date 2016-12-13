@@ -79,13 +79,6 @@ Template.ProjectSingle.helpers({
     return !!currentUser
   },
   userImages: () => {
-    // var volunteerIds = currentProject().volunteers;
-    // return volunteerIds.map(function(id) {
-    //   var profile = Profiles.findOne({created_by: id});
-    //   var imageId = profile.profileimage;
-    //   return Images.findOne({_id: imageId});
-    // });
-
     var volunteerIds = currentProject().volunteers;
     var img_and_profile = [];
     volunteerIds.forEach(function(id) {
@@ -98,7 +91,7 @@ Template.ProjectSingle.helpers({
       })
 
     });
-    // console.log(img_and_profile);
+    console.log(img_and_profile);
     return img_and_profile;
   }
 });
