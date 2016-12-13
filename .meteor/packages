@@ -44,5 +44,8 @@ cfs:autoform
 cfs:graphicsmagick
 accounts-base
 ian:bootstrap-3
-email
+
 check
+yogiben:autoform-map
+dburles:google-maps
+session

@@ -2,13 +2,14 @@
   <div class="projects">
     {{#if userSignedIn }}
     <button id="filter-by-skills">My skills</button> <button id="filter-by-location">My location</button>
+    <br>
     {{ /if }}
     {{#if noProjects }}
     <h3> Be the first to start a project </h3>
     {{ else }}
         <ul>
         {{#each projects}}
-          <li><a href="/project/{{_id}}">{{description}}, {{location}}</a></li>
+          <li><a href="/project/{{_id}}">{{description}} ({{getDistance(location)}}km away), {{formatDate(date)}} at {{time}}</a></li>
         {{/each}}
         </ul>
     {{ /if }}

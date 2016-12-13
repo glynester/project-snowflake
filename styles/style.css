@@ -1,0 +1,103 @@
+#listing-box {
+  border-style: solid;
+  border-width: 5px;
+}
+
+.home-menu li {
+  display: inline;
+}
+
+.header-experiment {
+  background: yellow;
+}
+
+
+li {
+  list-style: none;
+}
+
+.pure-button {
+  background-color: #2d3e50;
+}
+
+.pure-button-small a:hover, .pure-button-small a:focus {
+    color: #2d3e50;
+    background-color: #2d3e50;
+    color: white;
+    padding: 0.5em 2em;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+.home-menu li a:hover, .home-menu li a:focus {
+    background: none;
+    border: none;
+    color: #AECFE5;
+}
+
+button {
+  background-color: #AECFE5;
+  border: none;
+}
+
+.pure-u-1-2 {
+  width: 47%;
+}
+
+
+#pretty-box {
+    border-style: solid;
+    border-width: 1px;
+    margin: 15px;
+  }
+
+.content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pure-u-4-24{
+  background: tomato;
+  padding-left: 1% ;
+
+}
+
+.pure-menu-list{
+
+  height: 100%
+
+}
+
+
+.pure-u-20-24{
+  padding-left: 5% ;
+  height: 100%
+}
+
+.pure-u-5{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.listing-list-items {
+  padding-left: 5px;
+}
+
+.flash {
+    text-align: center;
+    padding:	.3em .4em;
+    margin:		2px auto .5em;
+    clear:		both;
+    max-width:	46.923em; /* 610/13 */
+    *max-width:	45.750em; /* 610/13.3333 - for IE */
+}
+
+.errors {
+    text-align: center;
+    padding:	.3em .4em;
+    margin:		0 auto .5em;
+    clear:		both;
+    max-width:	46.923em; /* 610/13 */
+    *max-width:	45.750em; /* 610/13.3333 - for IE */
+}

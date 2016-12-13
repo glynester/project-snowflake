@@ -37,9 +37,21 @@ ProfileSchema = new SimpleSchema({
        rows: 5
     }
   },
-  location: {
-    type: String,
-    label: 'Location:'
+	location: {
+    type: [Number],
+		decimal: true,
+    label: 'Location:',
+    autoform: {
+      type: 'map',
+      afFieldInput: {
+        geolocation: false,
+        searchBox: false,
+        autolocate: false,
+				clickableIcons: true,
+				searchBox: false,
+				zoom: 12,
+        }
+      }
   },
   skills: {
     type: [Skills],
@@ -62,6 +74,7 @@ ProfileSchema = new SimpleSchema({
       }
     }
   }
+
 });
 
 Profiles.attachSchema(ProfileSchema);

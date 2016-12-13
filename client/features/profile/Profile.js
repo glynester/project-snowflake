@@ -104,3 +104,32 @@ Template.UpdateProfile.events({
   //    };
   //  }
 });
+
+Template.profileMap.helpers({
+  mapOptions: () => {
+    var currentUser = Meteor.userId();
+    var userProfile = Profiles.findOne({created_by: currentUser});
+
+    var location = userProfile.location;
+    if (GoogleMaps.loaded()) {
+      var map = {
+        center: new google.maps.LatLng(location[1],location[0]),
+        zoom:13
+      };
+    }
+    return map
+  }
+});
+
+Template.profileMap.onCreated(function() {
+
+  GoogleMaps.ready('map', function(map) {
+    var currentUser = Meteor.userId();
+    var userProfile = Profiles.findOne({created_by: currentUser});
+    var location = userProfile.location;
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(location[1], location[0]),
+      map: map.instance
+    });
+  });
+});

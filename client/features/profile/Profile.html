@@ -1,9 +1,11 @@
 <template name="Profile">
   <div class="profile-container">
 
+    {{>profileMap}}
+
     <p id='Bioimage'>{{> imageView }} </p>
     <p id='Bio'> Bio: {{ profile.bio }} </p>
-    <p id='Location'> Location: {{ profile.location}} </p>
+
     Skills:
       <ul>
         {{#each profile.skills}}
@@ -63,5 +65,11 @@
         <img src="{{this.url store='images' }}" alt="" class="fullImage" />
       </div>
     {{/with}}
+  </div>
+</template>
+
+<template name="profileMap">
+  <div class="map-container">
+    {{> googleMap name="map" options=mapOptions}}
   </div>
 </template>
