@@ -15,8 +15,8 @@
   {{ /each }}
   </ul>
   <p class='userProfileImages'>
-    {{#each userImages}}
-        <img src="{{this.url store='thumbs' }}" alt="" class="thumbImage" />
+     {{#each userImages}}
+      <a href="/profile/{{profile._id}}"><img src="{{image.url store='thumbs' }}" alt="" class="thumbImage"></a>
     {{/each}}
   </p>
 

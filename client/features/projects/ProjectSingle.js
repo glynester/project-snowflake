@@ -8,6 +8,10 @@ function currentUserId(){
   return Meteor.userId();
 };
 
+function currentUserEmail(){
+  return Meteor.user().emails[0].address;
+};
+
 function currentUserProfile(){
   return Profiles.findOne({created_by: currentUserId()});
 };
@@ -80,11 +84,19 @@ Template.ProjectSingle.helpers({
   },
   userImages: () => {
     var volunteerIds = currentProject().volunteers;
-    return volunteerIds.map(function(id) {
+    var img_and_profile = [];
+    volunteerIds.forEach(function(id) {
       var profile = Profiles.findOne({created_by: id});
       var imageId = profile.profileimage;
-      return Images.findOne({_id: imageId});
+      var image = Images.findOne({_id: imageId});
+      img_and_profile.push({
+        "image": image,
+        "profile": profile
+      })
+
     });
+    // console.log(img_and_profile);
+    return img_and_profile;
   }
 });
 
@@ -96,25 +108,29 @@ Template.ProjectSingle.events({
   },
   'click #volunteer-for-project' (){
     var id = FlowRouter.getParam('id');
-    var profile_id = currentUserProfile()._id
+    var profile_id = currentUserProfile()._id;
     if (currentProject().volunteers === undefined ){
-      var volunteers = 1
+      var volunteers = 1;
       Meteor.call('updateUsersProjects', profile_id, id);
-      Meteor.call('updateProjectVolunteers', id, currentUserId(), currentProject(), volunteers);
+      Meteor.call('updateProjectVolunteers', id, currentUserId(), currentUserEmail(), currentProject(), volunteers);
+      console.log(currentUserEmail());
       Meteor.call('sendEmail',
                   Meteor.user().emails[0].address,
+                  '',
                   'Hello from Snowflake!',
                   'You\'ve volunteered for a new project!!');
     } else if (currentProject().volunteers.indexOf(currentUserId) > -1){
     } else {
-      var volunteers = currentProject().volunteers.length + 1
+      var volunteers = currentProject().volunteers.length + 1;
       Meteor.call('updateUsersProjects', profile_id, id);
-      Meteor.call('updateProjectVolunteers', id, currentUserId(), currentProject(), volunteers);
+      Meteor.call('updateProjectVolunteers', id, currentUserId(), currentUserEmail(), currentProject(), volunteers);
+      console.log(currentUserEmail());
       Meteor.call('sendEmail',
                   Meteor.user().emails[0].address,
+                  '',
                   'Hello from Snowflake!',
                   'You\'ve volunteered for a new project!!');
-    };
+    }
     FlowRouter.go('view-projects');
   },
   'click #unvolunteer' (){
@@ -122,7 +138,7 @@ Template.ProjectSingle.events({
     var profile_id = currentUserProfile()._id;
     var volunteers = currentProject().volunteers.length - 1
     Meteor.call('removeProjectfromProfile', profile_id, id);
-    Meteor.call('removeUserFromProject', id, currentUserId(), currentProject(), volunteers);
+    Meteor.call('removeUserFromProject', id, currentUserId(), currentUserEmail(), currentProject(),  volunteers);
     FlowRouter.go('view-projects');
   }
 });

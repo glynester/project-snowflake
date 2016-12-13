@@ -111,10 +111,16 @@ ProjectsSchema = new SimpleSchema({
     optional: true,
     autoform: {
       type: "hidden"
+  	}
+	},
+	volunteersEmail: {
+	  type: [String],
+	  optional: true,
+	  autoform: {
+	    type: "hidden"
 
-    }
-  }
-
+	  }
+	}
 });
 
 Projects.attachSchema(ProjectsSchema);

@@ -1,4 +1,4 @@
-Profiles = new Mongo.Collection('profiles')
+Profiles = new Mongo.Collection('profiles');
 
 Profiles.allow({
 	insert: function(userId, doc) {
@@ -62,6 +62,16 @@ ProfileSchema = new SimpleSchema({
     optional: true,
     autoform: {
       type: 'hidden'
+    }
+  },
+  profileimage: {
+    type: String,
+		optional: true,
+    autoform: {
+      afFieldInput: {
+        type: "cfs-file",
+        collection: "images"
+      }
     }
   }
 
