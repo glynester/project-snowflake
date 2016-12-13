@@ -59,5 +59,5 @@ Template.mapmap.onCreated(function() {
 });
 
 Meteor.startup(function() {
-  GoogleMaps.load();
+  GoogleMaps.load({ v: '3', key: 'AIzaSyAqB3snrGRRRSgCH2B6ymISjj59hBRaE2I', libraries: 'geometry,places' });
 });

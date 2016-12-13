@@ -103,3 +103,36 @@ Template.UpdateProfile.events({
   //    };
   //  }
 });
+
+Template.profileMap.helpers({
+  mapOptions: () => {
+    var currentUser = Meteor.userId();
+    var userProfile = Profiles.findOne({created_by: currentUser});
+
+    var location = userProfile.location;
+    var long = location.split(",");
+    var longAndLat =  long.map(Number);
+    if (GoogleMaps.loaded()) {
+      var map = {
+        center: new google.maps.LatLng(longAndLat[0],longAndLat[1]),
+        zoom:15
+      };
+    }
+    return map
+  }
+});
+
+Template.profileMap.onCreated(function() {
+
+  GoogleMaps.ready('map', function(map) {
+    var currentUser = Meteor.userId();
+    var userProfile = Profiles.findOne({created_by: currentUser});
+    var location = userProfile.location;
+    var long = location.split(",");
+    var longAndLat =  long.map(Number);
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(longAndLat[0], longAndLat[1]),
+      map: map.instance
+    });
+  });
+});

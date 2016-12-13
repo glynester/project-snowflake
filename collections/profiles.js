@@ -47,7 +47,7 @@ ProfileSchema = new SimpleSchema({
         searchBox: false,
         autolocate: false,
 				clickableIcons: true,
-				searchBox: true,
+				searchBox: false,
 				zoom: 12,
         }
       }

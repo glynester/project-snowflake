@@ -126,3 +126,36 @@ Template.ProjectSingle.events({
     FlowRouter.go('view-projects');
   }
 });
+
+Template.projectListingMap.helpers({
+  mapOptions: () => {
+    var projectId = FlowRouter.getParam('id');
+    var project = Projects.findOne({_id: projectId});
+    var location = project.location;
+    var long = location.split(",");
+    var longAndLat =  long.map(Number);
+    if (GoogleMaps.loaded()) {
+      var map = {
+        center: new google.maps.LatLng(longAndLat[0],longAndLat[1]),
+        zoom:15
+      };
+    }
+    return map
+  }
+});
+
+Template.projectListingMap.onCreated(function() {
+
+  GoogleMaps.ready('map', function(map) {
+    var projectId = FlowRouter.getParam('id');
+    var project = Projects.findOne({_id: projectId});
+    var location = project.location;
+    var long = location.split(",");
+    var longAndLat =  long.map(Number);
+
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(longAndLat[0], longAndLat[1]),
+      map: map.instance
+    });
+  });
+});
