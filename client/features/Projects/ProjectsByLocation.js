@@ -69,17 +69,27 @@ Template.mapmap.helpers({
 
 Template.mapmap.onCreated(function() {
   var locations = [];
+  var descriptions = [];
   var allProjects = Projects.find({date: {$gte: new Date() }});
   allProjects.forEach(function (proj) {
     var location = proj.location;
     locations.push(location);
+    var desc = proj.description;
+    descriptions.push(desc);
   });
+  var infowindow = new google.maps.InfoWindow();
   GoogleMaps.ready('map', function(map) {
     for (i = 0; i < locations.length; i++) {
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i].split(",")[0], locations[i].split(",")[1]),
         map: map.instance
       });
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(descriptions[i]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
     };
   });
 });
