@@ -21,13 +21,13 @@ Meteor.startup(function() {
 
 Meteor.methods({
   sendEmail: function (to, subject, text) {
-    // check([to, subject, text], [String]);
-    // this.unblock();
-    // Email.send({
-    //   to: to,
-    //   from: 'no-reply@snowflake.com',
-    //   subject: subject,
-    //   text: text
-    // });
+    check([to, subject, text], [String]);
+    this.unblock();
+    Email.send({
+      to: to,
+      from: 'no-reply@snowflake.com',
+      subject: subject,
+      text: text
+    });
   }
 });

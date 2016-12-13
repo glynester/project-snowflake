@@ -16,10 +16,10 @@
   </ul>
   <p class='userProfileImages'>
      {{#each userImages}}
-     {{#if true}}
-     <a href="/profile/{{profile._id}}"><img src="/images/unknown.jpg" alt="" class="thumbImage"></a>
-      {{else}}
+      {{#if image.url}}
         <a href="/profile/{{profile._id}}"><img src="{{image.url store='thumbs' }}" alt="" class="thumbImage"></a>
+      {{else}}
+        <a href="/profile/{{profile._id}}"><img src="/images/unknown.jpg" alt="" class="thumbImage"></a>
       {{/if}}
     {{/each}}
   </p>
