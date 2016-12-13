@@ -63,6 +63,12 @@ Template.NewProfile.helpers({
 
 Template.NewProfile.events({
   'submit #insertProfileForm'(event) {
+    // if(Match.test({profileimage: null}, Profiles)){
+    //   console.log("No profile pic");
+    // } else {
+    //   console.log("Something unexpected happened!!!!!!!!!!!");
+    // }
+
     FlowRouter.go('main');
 
     Meteor.call('sendEmail',

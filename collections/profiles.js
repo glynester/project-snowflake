@@ -12,8 +12,7 @@ Profiles.allow({
 
 Skills = new SimpleSchema({
   skill: {
-    type: String,
-		unique: true
+    type: String
   }
 });
 
@@ -54,6 +53,7 @@ ProfileSchema = new SimpleSchema({
   },
   profileimage: {
     type: String,
+		optional: true,
     autoform: {
       afFieldInput: {
         type: "cfs-file",
