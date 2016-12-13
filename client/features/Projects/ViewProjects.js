@@ -36,7 +36,6 @@ Template.ViewProjects.helpers({
   },
   formatDate(date){
     var date = date;
-    console.log(date);
     var formattedDate = date.toString().slice(0, 15);
     return formattedDate;
   }
