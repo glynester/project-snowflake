@@ -67,7 +67,7 @@ ProjectsSchema = new SimpleSchema({
   },
   createdAt: {
     type: Date,
-    label: "Created At",
+    label: "Created At:",
     autoValue: function() {
     return new Date()
     },
@@ -77,14 +77,24 @@ ProjectsSchema = new SimpleSchema({
     },
   date: {
     type: Date,
-    label: "Date and time of Project",
+    label: "Date of Project:",
     optional: true,
     autoform: {
      afFieldInput: {
-       type: "datetime-local"
+       type: "date"
      }
    }
   },
+	time: {
+		type: String,
+		label: "Time:",
+		optional: true,
+		autoform: {
+		 afFieldInput: {
+			 type: "time"
+		 }
+	 }
+	},
   minPeople: {
     type: Number,
     label: 'Minumum People Required'

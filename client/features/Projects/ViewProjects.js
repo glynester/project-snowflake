@@ -1,6 +1,6 @@
 Template.ViewProjects.helpers({
   projects: () => {
-    return Projects.find({date: {$gte: new Date() }});
+    return Projects.find({date: {$gte: new Date() }}, {sort: {date: 1 }});
   },
   noProjects(){
     var currentUser = Meteor.userId();
@@ -33,6 +33,12 @@ Template.ViewProjects.helpers({
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     var d = R * c; // Distance in km
     return Math.round(d*10)/10;
+  },
+  formatDate(date){
+    var date = date;
+    console.log(date);
+    var formattedDate = date.toString().slice(0, 15);
+    return formattedDate;
   }
 });
 

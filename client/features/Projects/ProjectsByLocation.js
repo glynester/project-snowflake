@@ -3,18 +3,8 @@ Template.ProjectsByLocation.helpers({
     var id = Meteor.userId();
     var prof = Profiles.findOne({created_by: id});
     var projects = Projects.find({date: {$gte: new Date() }});
-    var sortedByDistance = Projects.find(
-   { location:
-       { $near :
-
-             prof.location
-
-
-       }
-   }
-)
-console.log(sortedByDistance.count());
-    return sortedByDistance
+    var sortedByDistance = Projects.find({ location: { $near: prof.location }});
+    return sortedByDistance;
   },
   noProjects(){
     var id = Meteor.userId();

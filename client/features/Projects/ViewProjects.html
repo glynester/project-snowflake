@@ -9,7 +9,7 @@
     {{ else }}
         <ul>
         {{#each projects}}
-          <li><a href="/project/{{_id}}">{{description}}, {{getDistance(location)}}km away</a></li>
+          <li><a href="/project/{{_id}}">{{description}} ({{getDistance(location)}}km away), {{formatDate(date)}} at {{time}}</a></li>
         {{/each}}
         </ul>
     {{ /if }}
