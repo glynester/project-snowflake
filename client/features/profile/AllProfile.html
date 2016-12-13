@@ -1,0 +1,29 @@
+<template name="AllProfile">
+  <div class="profile-container">
+
+    <p id='Bioimage'>{{> AllimageView }} </p>
+    <p id='Bio'> Bio: {{ getUserProfile.bio }} </p>
+    <p id='Location'> Location: {{ getUserProfile.location}} </p>
+    Skills:
+      <ul>
+        {{#each getUserProfile.skills}}
+          <li> {{ skill }} </li>
+        {{/each}}
+    </ul>
+    <!-- <form id="update-profile-button" action="/profile/update" method=get>
+       <input id="Submit" type="submit" value="Update profile">
+   </form> -->
+  </div>
+
+  </template>
+
+
+<template name="AllimageView">
+  <div class="AllimageView">
+    {{#with image}}
+      <div>
+        <img src="{{this.url store='images' }}" alt="" class="fullImage" />
+      </div>
+    {{/with}}
+  </div>
+</template>
