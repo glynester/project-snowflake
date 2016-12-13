@@ -67,6 +67,7 @@ Template.NewProfile.events({
 
     Meteor.call('sendEmail',
                 Meteor.user().emails[0].address,
+                '',
                 'Hello from Snowflake!',
                 'You\'ve added a new profile!!');
   },
