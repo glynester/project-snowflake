@@ -37,9 +37,20 @@ ProfileSchema = new SimpleSchema({
        rows: 5
     }
   },
-  location: {
+	location: {
     type: String,
-    label: 'Location:'
+    label: 'Location:',
+    autoform: {
+      type: 'map',
+      afFieldInput: {
+        geolocation: false,
+        searchBox: false,
+        autolocate: false,
+				clickableIcons: true,
+				searchBox: true,
+				zoom: 12,
+        }
+      }
   },
   skills: {
     type: [Skills],
@@ -51,16 +62,8 @@ ProfileSchema = new SimpleSchema({
     autoform: {
       type: 'hidden'
     }
-  },
-  profileimage: {
-    type: String,
-    autoform: {
-      afFieldInput: {
-        type: "cfs-file",
-        collection: "images"
-      }
-    }
   }
+
 });
 
 Profiles.attachSchema(ProfileSchema);

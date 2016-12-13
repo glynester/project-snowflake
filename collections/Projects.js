@@ -41,9 +41,19 @@ ProjectsSchema = new SimpleSchema({
       type: "hidden"
     }
   },
-  location: {
+	location: {
     type: String,
-    label: 'Location:'
+    label: 'Location:',
+    autoform: {
+      type: 'map',
+      afFieldInput: {
+        geolocation: false,
+        searchBox: true,
+        autolocate: false,
+				clickableIcons: true,
+				zoom: 12,
+        }
+      }
   },
   description: {
     type: String,
