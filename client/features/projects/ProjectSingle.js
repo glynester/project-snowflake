@@ -95,7 +95,6 @@ Template.ProjectSingle.helpers({
       })
 
     });
-    // console.log(img_and_profile);
     return img_and_profile;
   }
 });
