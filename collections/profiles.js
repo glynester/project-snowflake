@@ -49,6 +49,8 @@ ProfileSchema = new SimpleSchema({
 				clickableIcons: true,
 				searchBox: false,
 				zoom: 12,
+				defaultLat: 51.453844,
+				defaultLng: -2.588578,
         }
       }
   },

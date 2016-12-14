@@ -53,6 +53,8 @@ ProjectsSchema = new SimpleSchema({
         autolocate: false,
 				clickableIcons: true,
 				zoom: 12,
+				defaultLat: 52.489063,
+				defaultLng: -1.903464,
         }
       }
   },
