@@ -67,4 +67,7 @@ Template.signedIn.events({
   'click #filter-by-location'(event) {
     FlowRouter.go('filtered-by-location');
   },
+  'click #filter-by-status'(event) {
+    FlowRouter.go('filtered-by-status');
+  },
 });

@@ -1,0 +1,35 @@
+<template name="ProjectsByStatus">
+  <div class="projects">
+    <button id="no-filter">Show me everything</button> <button id="filter-by-skills">My skills</button> <button id="filter-by-location">My location</button>
+
+
+    {{#if noProjects }}
+    <h3> There are currently no projects listed </h3>
+    {{ else }}
+    {{ #if moreSupportBoolean }}
+    <h3> More support needed: </h3>
+        {{#each moreSupport}}
+        <ul>
+          <li><a href="/project/{{_id}}">{{description}} | {{getDistance(location)}}km away</a></li>
+        </ul>
+        {{/each}}
+    {{ /if }}
+    {{ #if goingAheadSpacesBoolean }}
+        <h3> More spaces available: </h3>
+        {{#each goingAheadSpaces}}
+        <ul>
+          <li><a href="/project/{{_id}}">{{description}} | {{getDistance(location)}}km away</a></li>
+        </ul>
+        {{/each}}
+    {{ /if }}
+    {{ #if goingAheadFullBoolean }}
+        <h3> Currently full: </h3>
+        {{#each goingAheadFull}}
+        <ul>
+          <li><a href="/project/{{_id}}">{{description}} | {{getDistance(location)}}km away</a></li>
+        </ul>
+        {{/each}}
+    {{ /if}}
+    {{ /if }}
+  </div>
+</template>
