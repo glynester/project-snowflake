@@ -1,20 +1,37 @@
 <template name="ViewProjects">
   <div class="projects">
-    {{#if userSignedIn }}
-      {{#if userHasProfile}}
-    <button id="filter-by-skills">My skills</button> <button id="filter-by-location">My location</button>
-    <br>
-      {{/if}}
-    {{ /if }}
 
     {{#if noProjects }}
     <h3> Be the first to start a project </h3>
-    {{ else }}
-        <ul>
-        {{#each projects}}
-          <li><a href="/project/{{_id}}">{{description}} | {{#if userHasProfile}} {{getDistance(location)}}km away | {{/if}} {{formatDate(date)}} at {{time}}</a></li>
-        {{/each}}
-        </ul>
     {{ /if }}
+
+    {{#if userSignedIn }}
+        {{#if userHasProfile}}
+            {{>signedIn}}
+        {{ else }}
+            {{> noUserLocation}}
+        {{ /if }}
+    {{ else }}
+        {{> noUserLocation }}
+    {{ /if }}
+
   </div>
+</template>
+
+<template name="noUserLocation">
+  {{#each projects}}
+  <ul>
+    <li><a href="/project/{{_id}}">{{description}} | {{formatDate(date)}} at {{time}}</a></li>
+  </ul>
+  {{/each}}
+</template>
+
+<template name="signedIn">
+    <button id="filter-by-skills">My skills</button> <button id="filter-by-location">My location</button>
+    <br>
+  {{#each projects}}
+  <ul>
+    <li><a href="/project/{{_id}}">{{description}} | {{getDistance(location)}}km away | {{formatDate(date)}} at {{time}}</a></li>
+  </ul>
+  {{/each}}
 </template>

@@ -1,7 +1,4 @@
 Template.ViewProjects.helpers({
-  projects: () => {
-    return Projects.find({date: {$gte: new Date() }}, {sort: {date: 1 }});
-  },
   noProjects(){
     var currentUser = Meteor.userId();
     var listOfProjects = Projects.find({});
@@ -10,6 +7,17 @@ Template.ViewProjects.helpers({
   userSignedIn(){
     var currentUser = Meteor.userId();
     return !!currentUser
+  },
+  userHasProfile(){
+    var currentUser = Meteor.userId();
+    var userProfileBoolean = Profiles.findOne({created_by: currentUser});
+    return userProfileBoolean;
+  },
+});
+
+Template.signedIn.helpers({
+  projects(){
+    return Projects.find({date: {$gte: new Date() }}, {sort: {date: 1 }});
   },
   getDistance(destination){
     function deg2rad(deg) {
@@ -39,14 +47,20 @@ Template.ViewProjects.helpers({
     var formattedDate = date.toString().slice(0, 15);
     return formattedDate;
   },
-  userHasProfile(){
-    var currentUser = Meteor.userId();
-    var userProfileBoolean = Profiles.findOne({created_by: currentUser});
-    return userProfileBoolean;
+});
+
+Template.noUserLocation.helpers({
+  projects(){
+    return Projects.find({date: {$gte: new Date() }}, {sort: {date: 1 }});
+  },
+  formatDate(date){
+    var date = date;
+    var formattedDate = date.toString().slice(0, 15);
+    return formattedDate;
   },
 });
 
-Template.ViewProjects.events({
+Template.signedIn.events({
   'click #filter-by-skills'(event) {
     FlowRouter.go('filtered-by-skills');
   },

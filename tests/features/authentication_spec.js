@@ -8,14 +8,14 @@ describe('my module', function () {
 
 
 describe('Running the signUp helper', function() {
-  it('should sign a user up', function () {
+  it('should sign a user up @watch', function () {
     signUp();
     expect(browser.getUrl()).to.equal("http://localhost:3000/main");
   });
 });
 
-describe('Running the logOut helper', function() {
-    it('should log a user out', function () {
+describe('Running the logOut helper @watch', function() {
+    it('should log a user out @watch', function () {
       logOut();
       expect(browser.getUrl()).to.equal("http://localhost:3000/main");
     });
@@ -56,4 +56,5 @@ describe('Creating a profile', function() {
     });
     expect ( getProfile.bio ).to.equal( 'The worst painter');
   });
+
 });

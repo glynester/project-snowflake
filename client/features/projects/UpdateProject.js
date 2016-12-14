@@ -10,7 +10,6 @@ Template.UpdateProject.events({
     var id = FlowRouter.getParam('id');
     var project =  Projects.findOne({_id: id});
     var volunteers = project.volunteers;
-    console.log(volunteers);
     Meteor.call('setProjectStatus', project);
     Meteor.call('deleteNullProjSkills', project);
     Meteor.call('sendEmail',
