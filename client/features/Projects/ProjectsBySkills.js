@@ -2,7 +2,8 @@ Template.ProjectsBySkills.helpers({
   projects: () => {
     var id = Meteor.userId();
     var prof = Profiles.findOne({created_by: id});
-    return Projects.find( {skills: {$in:  prof.skills} });
+    return Projects.find( {skills: {$in:  prof.skills},
+                          date: {$gte: new Date()} });
   },
   noProjects(){
     var id = Meteor.userId();
@@ -42,4 +43,9 @@ Template.ProjectsBySkills.events({
   'click #filter-by-location'(event) {
     FlowRouter.go('filtered-by-location');
   },
+  'click #filter-by-status'(event) {
+    FlowRouter.go('filtered-by-status');
+  },
+
+
 });

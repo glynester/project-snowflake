@@ -38,7 +38,11 @@ Template.Profile.helpers({
     var currentUser = Meteor.userId();
     var userProfile = Profiles.findOne({created_by: currentUser});
     var projectIds = userProfile.projects;
-    return projectIds === undefined
+    var listOfVolunteerProjects = Projects.find({_id: {$in: projectIds},
+                                                date: {$gte: new Date()}});
+        console.log()
+    return listOfVolunteerProjects = Projects.find({_id: {$in: projectIds},
+                                                date: {$gte: new Date()}}).count() <= 0;
   },
   volunteerProjects(){
     var currentUser = Meteor.userId();
