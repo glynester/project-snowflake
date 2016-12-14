@@ -96,7 +96,12 @@ Template.ProjectSingle.helpers({
 
     });
     return img_and_profile;
-  }
+  },
+  userHasProfile(){
+    var currentUser = Meteor.userId();
+    var userProfileBoolean = Profiles.findOne({created_by: currentUser});
+    return userProfileBoolean;
+  },
 });
 
 Template.ProjectSingle.events({

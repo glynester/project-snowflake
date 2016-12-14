@@ -48,9 +48,28 @@ ProfileSchema = new SimpleSchema({
         autolocate: true,
 				clickableIcons: true,
 				zoom: 12,
+				defaultLat: 51.453844,
+				defaultLng: -2.588578,
         }
       }
   },
+
+	skillsAlt: {
+    type: String,
+    optional: true,
+    autoform: {
+      type: "What skills can you share?",
+      options: function () {
+        return [
+          {label: "Plumbing", value: "Plumbing"},
+          {label: "Cooking", value: "Cooking"},
+          {label: "Cleaning", value: "Cleaning"}
+        ];
+      }
+    }
+  },
+
+
   skills: {
     type: [Skills],
     optional: true
