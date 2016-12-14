@@ -44,10 +44,9 @@ ProfileSchema = new SimpleSchema({
       type: 'map',
       afFieldInput: {
         geolocation: false,
-        searchBox: false,
-        autolocate: false,
+        searchBox: true,
+        autolocate: true,
 				clickableIcons: true,
-				searchBox: false,
 				zoom: 12,
 				defaultLat: 51.453844,
 				defaultLng: -2.588578,
