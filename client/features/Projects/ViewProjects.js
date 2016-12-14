@@ -38,7 +38,12 @@ Template.ViewProjects.helpers({
     var date = date;
     var formattedDate = date.toString().slice(0, 15);
     return formattedDate;
-  }
+  },
+  userHasProfile(){
+    var currentUser = Meteor.userId();
+    var userProfileBoolean = Profiles.findOne({created_by: currentUser});
+    return userProfileBoolean;
+  },
 });
 
 Template.ViewProjects.events({
