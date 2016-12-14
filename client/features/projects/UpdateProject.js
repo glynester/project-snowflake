@@ -18,6 +18,6 @@ Template.UpdateProject.events({
                 project.volunteersEmail,
                 'Hello from Snowflake!',
                 project.description);
-    FlowRouter.go('view-projects');
+    // FlowRouter.go('view-projects');
   },
 });
