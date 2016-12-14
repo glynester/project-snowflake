@@ -109,7 +109,6 @@ Template.profileMap.helpers({
   mapOptions: () => {
     var currentUser = Meteor.userId();
     var userProfile = Profiles.findOne({created_by: currentUser});
-
     var location = userProfile.location;
     if (GoogleMaps.loaded()) {
       var map = {

@@ -54,6 +54,23 @@ ProfileSchema = new SimpleSchema({
         }
       }
   },
+
+	skillsAlt: {
+    type: String,
+    optional: true,
+    autoform: {
+      type: "What skills can you share?",
+      options: function () {
+        return [
+          {label: "Plumbing", value: "Plumbing"},
+          {label: "Cooking", value: "Cooking"},
+          {label: "Cleaning", value: "Cleaning"}
+        ];
+      }
+    }
+  },
+
+
   skills: {
     type: [Skills],
     optional: true
