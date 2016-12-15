@@ -1,5 +1,12 @@
 <template name="NewProject">
+
+  {{ #if userHasProfile }}
     <div class="new-project-container">
         {{> quickForm collection='Projects' id='insertProjectForm' type="insert" class="new-project-form"}}
     </div>
+  {{ else }}
+     <h3> Complete your profile to add a project </h3>
+     <button id="create-profile">Create profile</button>
+
+  {{ /if }}
 </template>
