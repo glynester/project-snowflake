@@ -49,18 +49,7 @@ Template.signedIn.helpers({
   },
 });
 
-Template.noUserLocation.helpers({
-  projects(){
-    return Projects.find({date: {$gte: new Date() }}, {sort: {date: 1 }});
-  },
-  formatDate(date){
-    var date = date;
-    var formattedDate = date.toString().slice(0, 15);
-    return formattedDate;
-  },
-});
-
-Template.signedIn.events({
+Template.ViewProjects.events({
   'click #filter-by-skills'(event) {
     FlowRouter.go('filtered-by-skills');
   },

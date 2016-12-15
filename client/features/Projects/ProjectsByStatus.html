@@ -1,35 +1,35 @@
 <template name="ProjectsByStatus">
-  <div class="projects">
-    <button id="no-filter">Show me everything</button> <button id="filter-by-skills">My skills</button> <button id="filter-by-location">My location</button>
-
-
+  <button id="no-filter">All</button> <button id="filter-by-skills">By skills</button> <button id="filter-by-location">By location</button>
+  <brsmall></brsmall>
     {{#if noProjects }}
     <h3> There are currently no projects listed </h3>
     {{ else }}
     {{ #if moreSupportBoolean }}
     <h3> More support needed: </h3>
         {{#each moreSupport}}
-        <ul>
-          <li><a href="/project/{{_id}}">{{description}} | {{getDistance(location)}}km away</a></li>
-        </ul>
+          <div class="projects">
+            <h3><a href="/project/{{_id}}">{{description}}</a></h3>
+            <h5>{{getDistance(location)}}km away | {{formatDate(date)}} at {{time}}</h5>
+          </div>
         {{/each}}
     {{ /if }}
     {{ #if goingAheadSpacesBoolean }}
         <h3> More spaces available: </h3>
         {{#each goingAheadSpaces}}
-        <ul>
-          <li><a href="/project/{{_id}}">{{description}} | {{getDistance(location)}}km away</a></li>
-        </ul>
+        <div class="projects">
+          <h3><a href="/project/{{_id}}">{{description}}</a></h3>
+          <h5>{{getDistance(location)}}km away | {{formatDate(date)}} at {{time}}</h5>
+        </div>
         {{/each}}
     {{ /if }}
     {{ #if goingAheadFullBoolean }}
         <h3> Currently full: </h3>
         {{#each goingAheadFull}}
-        <ul>
-          <li><a href="/project/{{_id}}">{{description}} | {{getDistance(location)}}km away</a></li>
-        </ul>
+        <div class="projects">
+          <h3><a href="/project/{{_id}}">{{description}}</a></h3>
+          <h5>{{getDistance(location)}}km away | {{formatDate(date)}} at {{time}}</h5>
+        </div>
         {{/each}}
     {{ /if}}
     {{ /if }}
-  </div>
 </template>
