@@ -7,11 +7,9 @@
   </div>
   <h3>Skills</h3>
   <div class="profile">
-    <ul >
       {{#each getUserProfile.skills}}
-        <li> {{ skill }} </li>
+        - {{ skill }}<br>
       {{/each}}
-  </ul>
   </div>
    <form>
      <input type="button" class='btn' value="Back" onClick="history.go(-1);return true;">
