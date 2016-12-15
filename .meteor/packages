@@ -43,7 +43,7 @@ cfs:gridfs
 cfs:autoform
 cfs:graphicsmagick
 accounts-base
-ian:bootstrap-3
+
 
 check
 yogiben:autoform-map
