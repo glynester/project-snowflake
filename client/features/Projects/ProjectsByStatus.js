@@ -39,10 +39,7 @@ Template.ProjectsByStatus.helpers({
     return Projects.find( {status: 2 });
   },
   noProjects(){
-    var id = Meteor.userId();
-    var prof = Profiles.findOne({created_by: id});
-    var skillSet = Projects.find( {skills: {$in:  prof.skills} });
-    return skillSet.count() === 0;
+    return projects.find( { date: {$gte: new Date()} }).count() === 0;
   },
   getDistance(destination){
     function deg2rad(deg) {
