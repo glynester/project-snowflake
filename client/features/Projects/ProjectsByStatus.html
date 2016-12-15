@@ -5,7 +5,7 @@
     <h3> There are no projects listed. </h3>
     {{ else }}
     {{ #if moreSupportBoolean }}
-    <h3> Not confirmed: More volunteers needed </h3>
+    <h3> Not Confirmed: More volunteers needed </h3>
         {{#each moreSupport}}
           <div class="projects">
             <h3><a href="/project/{{_id}}">{{description}}</a></h3>
@@ -14,7 +14,7 @@
         {{/each}}
     {{ /if }}
     {{ #if goingAheadSpacesBoolean }}
-        <h3> Confirmed: Space available </h3>
+        <h3> Confirmed: Spaces available </h3>
         {{#each goingAheadSpaces}}
         <div class="projects">
           <h3><a href="/project/{{_id}}">{{description}}</a></h3>
@@ -23,7 +23,7 @@
         {{/each}}
     {{ /if }}
     {{ #if goingAheadFullBoolean }}
-        <h3> Confirmed: Full </h3>
+        <h3> Confirmed: No spaces available </h3>
         {{#each goingAheadFull}}
         <div class="projects">
           <h3><a href="/project/{{_id}}">{{description}}</a></h3>

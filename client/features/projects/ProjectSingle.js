@@ -33,16 +33,16 @@ Template.ProjectSingle.helpers({
   getStatus: () => {
     switch (currentProject().status) {
       case 0:
-      return "More volunteers needed";
+      return "Not Confirmed: More volunteers needed";
       break;
       case 1:
-      return "Going ahead - more spaces available";
+      return "Confirmed: Spaces available";
       break;
       case 2:
-      return "Going ahead - no spaces left";
+      return "Confirmed: No spaces available";
       break;
       case 3:
-      return "Taken place";
+      return "Complete";
       break;
       case 4:
       return "Abandoned";
