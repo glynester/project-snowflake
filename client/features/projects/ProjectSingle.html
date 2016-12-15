@@ -51,7 +51,7 @@
 {{ #if userSignedIn }}
     {{ #if userHasProfile }}
           {{ #if currentUserProject }}
-            <a  href="/project/update/{{project._id}}"><button id="update-project">Update</button></a>
+            <a style='color:black' href="/project/update/{{project._id}}"><button id="update-project">Update</button></a>
             <button id="delete-project">Delete</button>
           {{ else }}
               {{ #if alreadyVolunteered }}
