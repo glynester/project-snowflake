@@ -2,10 +2,10 @@
   <button id="no-filter">All</button> <button id="filter-by-skills">By skills</button> <button id="filter-by-location">By location</button>
   <brsmall></brsmall>
     {{#if noProjects }}
-    <h3> There are currently no projects listed </h3>
+    <h3> There are no projects listed. </h3>
     {{ else }}
     {{ #if moreSupportBoolean }}
-    <h3> More support needed: </h3>
+    <h3> Not Confirmed: More volunteers needed </h3>
         {{#each moreSupport}}
           <div class="projects">
             <h3><a href="/project/{{_id}}">{{description}}</a></h3>
@@ -14,7 +14,7 @@
         {{/each}}
     {{ /if }}
     {{ #if goingAheadSpacesBoolean }}
-        <h3> More spaces available: </h3>
+        <h3> Confirmed: Spaces available </h3>
         {{#each goingAheadSpaces}}
         <div class="projects">
           <h3><a href="/project/{{_id}}">{{description}}</a></h3>
@@ -23,7 +23,7 @@
         {{/each}}
     {{ /if }}
     {{ #if goingAheadFullBoolean }}
-        <h3> Currently full: </h3>
+        <h3> Confirmed: No spaces available </h3>
         {{#each goingAheadFull}}
         <div class="projects">
           <h3><a href="/project/{{_id}}">{{description}}</a></h3>
