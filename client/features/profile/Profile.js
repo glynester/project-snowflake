@@ -38,7 +38,11 @@ Template.Profile.helpers({
     var currentUser = Meteor.userId();
     var userProfile = Profiles.findOne({created_by: currentUser});
     var projectIds = userProfile.projects;
-    return projectIds === undefined
+    var listOfVolunteerProjects = Projects.find({_id: {$in: projectIds},
+                                                date: {$gte: new Date()}});
+        console.log()
+    return listOfVolunteerProjects = Projects.find({_id: {$in: projectIds},
+                                                date: {$gte: new Date()}}).count() <= 0;
   },
   volunteerProjects(){
     var currentUser = Meteor.userId();
@@ -63,14 +67,13 @@ Template.NewProfile.helpers({
 
 Template.NewProfile.events({
   'submit #insertProfileForm'(event) {
-    FlowRouter.go('main');
-
+    // FlowRouter.go('main');
     Meteor.call('sendEmail',
                 Meteor.user().emails[0].address,
                 '',
                 'Hello from Snowflake!',
                 'You\'ve added a new profile!!');
-  },
+              }
 
 });
 
@@ -109,7 +112,6 @@ Template.profileMap.helpers({
   mapOptions: () => {
     var currentUser = Meteor.userId();
     var userProfile = Profiles.findOne({created_by: currentUser});
-
     var location = userProfile.location;
     if (GoogleMaps.loaded()) {
       var map = {

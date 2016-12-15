@@ -4,8 +4,8 @@
       <p> Please sign up to create a profile </p>
     {{else}}
        {{#if userHasProfile }}
-         <p id="profile-error"> You have already completed your profile </p>
-         <form id="update-profile-button" action="/profile/update" method=get>
+         <p id="profile-error"> You have already completed your profile</p>
+         <form id="update-profile-button" action="/profile" method=get>
             <input id="Submit" type="submit" value="Update profile">
         </form>
         {{else}}

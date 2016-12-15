@@ -1,9 +1,42 @@
-Template.ProjectsBySkills.helpers({
+Template.ProjectsByStatus.helpers({
   projects: () => {
     var id = Meteor.userId();
     var prof = Profiles.findOne({created_by: id});
-    return Projects.find( {skills: {$in:  prof.skills},
+    return Projects.find( {skills: {$in:  prof.skills} });
+  },
+  moreSupportBoolean: () => {
+    console.log(Projects.find( {status: 0,
+                          date: {$gte: new Date()}}).count());
+
+    return Projects.find( {status: 0,
+                          date: {$gte: new Date()}}).count() > 0;
+  },
+  moreSupport: () => {
+
+    return Projects.find( {status: 0,
+                           date: {$gte: new Date()} });
+  },
+  goingAheadSpacesBoolean: () => {
+    console.log(Projects.find( {status: 1,
+                          date: {$gte: new Date()}}).count());
+
+    return Projects.find( {status: 1,
+                          date: {$gte: new Date()} }).count() > 0;
+  },
+  goingAheadSpaces: () => {
+    return Projects.find( {status: 1,
                           date: {$gte: new Date()} });
+  },
+  goingAheadFullBoolean: () => {
+    console.log(Projects.find( {status: 2,
+                          date: {$gte: new Date()}}).count());
+
+    return Projects.find( {status: 2,
+                          date: {$gte: new Date()} }).count() > 0;
+  },
+  goingAheadFull: () => {
+
+    return Projects.find( {status: 2 });
   },
   noProjects(){
     var id = Meteor.userId();
@@ -36,16 +69,14 @@ Template.ProjectsBySkills.helpers({
   }
 });
 
-Template.ProjectsBySkills.events({
+Template.ProjectsByStatus.events({
   'click #no-filter'(event) {
     FlowRouter.go('view-projects');
   },
   'click #filter-by-location'(event) {
     FlowRouter.go('filtered-by-location');
   },
-  'click #filter-by-status'(event) {
-    FlowRouter.go('filtered-by-status');
+  'click #filter-by-skills'(event) {
+    FlowRouter.go('filtered-by-skills');
   },
-
-
 });

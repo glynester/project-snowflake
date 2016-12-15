@@ -47,6 +47,9 @@ Template.ProjectsByLocation.events({
   'click #filter-by-skills'(event) {
     FlowRouter.go('filtered-by-skills');
   },
+  'click #filter-by-status'(event) {
+    FlowRouter.go('filtered-by-status');
+  },
 });
 
 Template.mapmap.helpers({

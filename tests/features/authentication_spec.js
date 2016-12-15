@@ -14,7 +14,7 @@ describe('Running the signUp helper', function() {
   });
 });
 
-describe('Running the logOut helper', function() {
+describe('Running the logOut helper @watch', function() {
     it('should log a user out @watch', function () {
       logOut();
       expect(browser.getUrl()).to.equal("http://localhost:3000/main");
@@ -56,4 +56,5 @@ describe('Creating a profile', function() {
     });
     expect ( getProfile.bio ).to.equal( 'The worst painter');
   });
+
 });
