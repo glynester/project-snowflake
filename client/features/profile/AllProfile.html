@@ -1,17 +1,20 @@
 <template name="AllProfile">
-  <div class="profile-container">
+  <!-- <div class="profile-container"> -->
     <p id='Bioimage'>{{> AllimageView }} </p>
-    <p id='Bio'> Bio: {{ getUserProfile.bio }} </p>
-    Skills:
-      <ul>
-        {{#each getUserProfile.skills}}
-          <li> {{ skill }} </li>
-        {{/each}}
-    </ul>
-   <form>
-     <input type="button" value="Back" onClick="history.go(-1);return true;">
-   </form>
+    <h3>Bio</h3>
+    <div class="profile">
+    <p id='Bio'> {{ getUserProfile.bio }} </p>
   </div>
+  <h3>Skills</h3>
+  <div class="profile">
+      {{#each getUserProfile.skills}}
+        - {{ skill }}<br>
+      {{/each}}
+  </div>
+   <form>
+     <input type="button" class='btn' value="Back" onClick="history.go(-1);return true;">
+   </form>
+  <!-- </div> -->
   </template>
 
 
