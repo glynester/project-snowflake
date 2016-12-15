@@ -1,6 +1,17 @@
 <template name="Header">
   <header>
-    <h1 align="center">Project Snowflake <i class="fa fa-snowflake-o"></i></h1>
+    <div class="dropdown" style="float:left;">
+      <button class="dropbtn">Menu</button>
+      <div class="dropdown-content" style="left:0;">
+        {{#if currentUser}}
+        <a href="/profile"><i class="fa fa-list"></i>  Profile</a>
+        <a href="/project/new"><i class="fa fa-plus"></i>  Add Project</a>
+        {{/if}}
+        <a href="/projects"><i class="fa fa-snowflake-o"></i>  View Projects</a>
+
+      </div>
+    </div>
+    <h1 align="center">I'm In: Your local collaboration hub</h1>
     {{> loginButtons}}
     {{> email}}
   </header>
