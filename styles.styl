@@ -388,21 +388,8 @@ input, select, textarea
         a
             color blue
 
-    .main-layout
-        lost-center 90%
-        margin-top 40px
-        +above($med)
-            lost-center 90%
-            padding-left $side-nav
-        +above($large)
-            lost-center 80%
-            margin-top 40px
-            padding-left $side-nav-large
-
 #buffer
     height 50px
-
-
 
 .profile-container
     position relative
@@ -419,6 +406,41 @@ input, select, textarea
             margin-bottom 10px
             textarea, input
             width 100%
+
+.profile-projects-container
+    position relative
+    background #FFF
+    padding 20px
+    margin-bottom 20px
+    .fa-close
+        position absolute
+          top 0
+          right 0
+          padding 20px
+            label
+            display block
+            margin-bottom 10px
+            textarea, input
+            width 100%
+
+.project-list-single
+    position relative
+    background #FFF
+    padding 20px
+    margin-bottom 20px
+    border-style solid
+    border-width 2px
+    border-color #AFA6A4
+    .fa-close
+        position absolute
+          top 0
+          right 0
+          padding 20px
+            label
+            display block
+            margin-bottom 10px
+            textarea, input
+            width 80%
 
 .map-container {
   width: 100%;
