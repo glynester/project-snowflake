@@ -20,9 +20,9 @@
 
 <template name="noUserLocation">
   {{#each projects}}
-  <ul>
-    <li><a href="/project/{{_id}}">{{description}} | {{formatDate(date)}} at {{time}}</a></li>
-  </ul>
+  <h4><a href="/project/{{_id}}">{{description}}</a></h4>
+  <h6>{{formatDate(date)}} at {{time}}</h6>
+  <brsmall></brsmall>
   {{/each}}
 </template>
 
@@ -30,8 +30,8 @@
     <button id="filter-by-skills">My skills</button> <button id="filter-by-location">My location</button> <button id="filter-by-status">By Status</button>
     <br>
   {{#each projects}}
-  <ul>
-    <li><a href="/project/{{_id}}">{{description}} | {{getDistance(location)}}km away | {{formatDate(date)}} at {{time}}</a></li>
-  </ul>
+    <h4><a href="/project/{{_id}}">{{description}}</a></h4>
+    <h6>{{getDistance(location)}}km away | {{formatDate(date)}} at {{time}}</h6>
+    <brsmall></brsmall>
   {{/each}}
 </template>

@@ -1,19 +1,42 @@
 <template name='ProjectSingle'>
-  {{>projectListingMap}}
-  <p>Description: {{project.description}}</p>
-  <p>Status: {{ getStatus}}</p>
-  {{ #if goingAhead }}
-    <p>Spaces left: {{ spacesLeft }}</p>
-  {{ else }}
-  <p>Volunteers required: {{ volunteersRequired }}</p>
-  {{ /if }}
-  <p>Date and time: {{project.date}}</p>
-  <p>Skills:</p>
-  <ul>
-  {{ #each project.skills }}
-    <li>{{ skill }}</li>
-  {{ /each }}
-  </ul>
+
+  <h3>{{project.description}}</h3>
+
+  <div class="map-container">
+    {{>projectListingMap}}
+  </div>
+  <br>
+
+  <table style="width:100%">
+    <tr>
+      <td>Status</td>
+      <td>{{ getStatus}}</td>
+    </tr>
+    {{ #if goingAhead }}
+    <tr>
+      <td>Spaces left</td>
+      <td>{{ spacesLeft }}</td>
+    </tr>
+    {{ else }}
+    <tr>
+      <td>Volunteers required</td>
+      <td>{{ volunteersRequired }}</td>
+    </tr>
+    {{ /if }}
+    <tr>
+      <td>Date and time</td>
+      <td>{{formatDate(project.date)}} at {{project.time}}</td>
+    </tr>
+    <tr>
+      <td>Skills</td>
+      <td>
+        {{ #each project.skills }}
+          * {{ skill }}
+        {{ /each }}
+      </td>
+    </tr>
+  </table>
+
   <p class='userProfileImages'>
      {{#each userImages}}
       {{#if image.url}}

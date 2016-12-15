@@ -4,12 +4,13 @@
 
     {{#if noProjects }}
     <h3> Nothing matches your skills yet, add more or go start something that does! </h3>
-    {{ else }}
-        {{#each projects}}
-        <ul>
-          <li><a href="/project/{{_id}}">{{description}} | {{getDistance(location)}}km away</a>  </li>
-        </ul>
-        {{/each}}
+
+    {{#each projects}}
+      <h4><a href="/project/{{_id}}">{{description}}</a></h4>
+      <h6>{{getDistance(location)}}km away | {{formatDate(date)}} at {{time}}</h6>
+      <brsmall></brsmall>
+    {{/each}}
+
     {{ /if }}
   </div>
 </template>

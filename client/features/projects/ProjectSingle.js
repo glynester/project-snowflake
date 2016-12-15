@@ -23,6 +23,13 @@ Template.ProjectSingle.helpers({
   currentUserProject: () => {
     return currentProject().created_by === currentUserId();
   },
+
+  formatDate(date){
+    var date = date;
+    var formattedDate = date.toString().slice(0, 15);
+    return formattedDate;
+  },
+
   getStatus: () => {
     switch (currentProject().status) {
       case 0:
@@ -156,6 +163,7 @@ Template.projectListingMap.helpers({
       var map = {
         center: new google.maps.LatLng(location[1],location[0]),
         zoom:13
+
       };
     }
     return map
