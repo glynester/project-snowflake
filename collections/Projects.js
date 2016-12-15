@@ -79,7 +79,7 @@ ProjectsSchema = new SimpleSchema({
     },
   date: {
     type: Date,
-    label: "Date of Project",
+    label: "Date",
 		min: new Date(),
     optional: true,
     autoform: {
@@ -90,7 +90,7 @@ ProjectsSchema = new SimpleSchema({
   },
 	time: {
 		type: String,
-		label: "Time:",
+		label: "Time",
 		optional: true,
 		autoform: {
 		 afFieldInput: {

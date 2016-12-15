@@ -19,7 +19,7 @@ Skills = new SimpleSchema({
 ProfileSchema = new SimpleSchema({
   created_by: {
     type: String,
-    label: 'Created by:',
+    label: 'Created by',
     unique: true,
     autoValue: function() {
       return this.userId;
@@ -39,7 +39,7 @@ ProfileSchema = new SimpleSchema({
 	location: {
     type: [Number],
 		decimal: true,
-    label: 'Location:',
+    label: 'Location',
     autoform: {
       type: 'map',
       afFieldInput: {
@@ -53,22 +53,6 @@ ProfileSchema = new SimpleSchema({
         }
       }
   },
-
-	skillsAlt: {
-    type: String,
-    optional: true,
-    autoform: {
-      type: "What skills can you share?",
-      options: function () {
-        return [
-          {label: "Plumbing", value: "Plumbing"},
-          {label: "Cooking", value: "Cooking"},
-          {label: "Cleaning", value: "Cleaning"}
-        ];
-      }
-    }
-  },
-
 
   skills: {
     type: [Skills],
@@ -84,6 +68,7 @@ ProfileSchema = new SimpleSchema({
   profileimage: {
     type: String,
 		optional: true,
+		label: 'Profile Image',
     autoform: {
       afFieldInput: {
         type: "cfs-file",
