@@ -38,11 +38,6 @@
         {{/each}}
       {{/if}}
 
-  <h3>Profile</h3>
-  <table style="width:100%" class="projects">
-  <h4>{{profile.bio}}</h4>
-</table>
-
       {{#if notVolunteering }}
           <h3>You have no upcoming volunteer sessions</h3>
       {{ else }}
@@ -55,45 +50,6 @@
       {{/each}}
     {{/if}}
 
-
-
-
-  <h3>Skills</h3>
-  <table style="width:100%" class="projects">
-
-  <tr>
-
-    <td>
-      {{ #each profile.skills }}
-        * {{ skill }}
-        <br />
-      {{ /each }}
-    </td>
-  </tr>
-</table>
- <h3>Projects</h3>
-  <table style="width:100%" class="projects">
-    {{#if noProjects }}
-  <tr>
-    <td><h4>Projects</h4></td>
-    <td>You have no open projects, go create some!</td>
-  </tr>
-    {{ else }}
-  <tr>
-
-    <td>
-      {{#each usersProjects}}
-      * {{description}}
-      <br />
-      * Date: {{date}}
-      <br />
-      <a href="/project/{{_id}}">View project</a>
-      <br /><br>
-      {{/each}}
-    </td>
-  </tr>
-  {{/if}}
-</table>
 
 <p class='userProfileImages'>
    {{#each userImages}}
