@@ -3,6 +3,23 @@
   border-width: 5px;
 }
 
+#profileMap{
+  border-width: 3px;
+
+}
+
+
+#map {
+        height: 50%;
+      }
+
+.map-canvas{
+  height: 20px;
+  width: 20px;
+
+}
+
+
 .home-menu li {
   display: inline;
 }
