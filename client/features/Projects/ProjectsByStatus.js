@@ -66,7 +66,12 @@ Template.ProjectsByStatus.helpers({
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     var d = R * c; // Distance in km
     return Math.round(d*10)/10;
-  }
+  },
+  formatDate(date){
+    var date = date;
+    var formattedDate = date.toString().slice(0, 15);
+    return formattedDate;
+  },
 });
 
 Template.ProjectsByStatus.events({

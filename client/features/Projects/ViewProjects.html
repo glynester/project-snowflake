@@ -1,37 +1,26 @@
 <template name="ViewProjects">
-  <div class="projects">
 
-    {{#if noProjects }}
-    <h3> Be the first to start a project </h3>
-    {{ /if }}
+  {{#if noProjects }}
+  <h2><a href="/project/new">Be the first to start a project...</a></h2>
+  {{else}}
 
-    {{#if userSignedIn }}
-        {{#if userHasProfile}}
-            {{>signedIn}}
-        {{ else }}
-            {{> noUserLocation}}
-        {{ /if }}
-    {{ else }}
-        {{> noUserLocation }}
-    {{ /if }}
+  {{#if userSignedIn }}
+    {{#if userHasProfile}}
+      <button id="filter-by-skills">By skills</button> <button id="filter-by-location">By location</button> <button id="filter-by-status">By status</button>
+      <brsmall></brsmall>
+    {{/if}}
+  {{/if}}
 
-  </div>
-</template>
+  {{>signedIn}}
 
-<template name="noUserLocation">
-  {{#each projects}}
-  <h4><a href="/project/{{_id}}">{{description}}</a></h4>
-  <h6>{{formatDate(date)}} at {{time}}</h6>
-  <brsmall></brsmall>
-  {{/each}}
+  {{/if}}
 </template>
 
 <template name="signedIn">
-    <button id="filter-by-skills">My skills</button> <button id="filter-by-location">My location</button> <button id="filter-by-status">By Status</button>
-    <br>
   {{#each projects}}
-    <h4><a href="/project/{{_id}}">{{description}}</a></h4>
-    <h6>{{getDistance(location)}}km away | {{formatDate(date)}} at {{time}}</h6>
-    <brsmall></brsmall>
+    <div class="projects">
+      <h3><a href="/project/{{_id}}">{{description}}</a></h3>
+      <h5>{{getDistance(location)}}km away | {{formatDate(date)}} at {{time}}</h5>
+    </div>
   {{/each}}
 </template>
