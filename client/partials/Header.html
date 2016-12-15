@@ -5,19 +5,17 @@
     <div class="pure-g">
       <div class="pure-u-5-24"></div>
       <div class="pure-u-14-24"><p></p>
-          <div class="dropdown" style="float:left;">
-              <button class="dropbtn">Menu</button>
-                  <div class="dropdown-content" style="left:0;">
+                      <span>  {{> loginButtons}}
+
                       {{#if currentUser}}
                           <a href="/profile"><i class="fa fa-list"></i>  Profile</a>
                           <a href="/project/new"><i class="fa fa-plus"></i>  Add Project</a>
                       {{/if}}
                           <a href="/projects"><i class="fa fa-snowflake-o"></i>  View Projects</a>
 
-                  </div>
-          </div>
-                <h1 align="center">I'm In:<small> Spend time wisely</small></h1>
-                {{> loginButtons}}
+                <h1 align="center">I'm In:</h1>
+              </span>
+
                 {{> email}}
         </div>
     <div class="pure-u-5-24"></div>
