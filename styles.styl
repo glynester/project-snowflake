@@ -76,25 +76,25 @@ html
     box-sizing: inherit
 
 body
-    font-family 'Salsa', cursive;
-    background #d7e3f2
+    font-family 'Dosis', cursive;
+    background #E0DCDB
     padding: 70px 0 150px
 
 header
     color #FFF
-    background: #478be5
+    background: #3CC47C
     padding 10px
     fixed top left
     width 100%
-    height 95px
+    height 100px
     z-index: z.header
-    shadow-level(2)
     clearfix()
     h1
         margin 0
         font-size 3.0em
     .login-buttons-dropdown-align-
         float right
+        margin-bottom 30px
         a
             color #FFF
             text-decoration none
@@ -117,16 +117,7 @@ p
     h2
         margin 10
 
-.main-layout
-    lost-center 90%
-    margin-top 40px
-    +above($med)
-        lost-center 90%
-        padding-left $side-nav
-    +above($large)
-        lost-center 80%
-        margin-top 40px
-        padding-left $side-nav-large
+
 
 .new-recipe
     margin-bottom 20px
@@ -136,7 +127,6 @@ p
     background #FFF
     padding 20px
     margin-bottom 20px
-    shadow-level(2)
     .fa-close
         position absolute
         top 0
@@ -151,22 +141,21 @@ p
 .btn, button
     display inline-block
     cursor pointer
-    background purp
+    background #57BC90
     color #FFF
     text-decoration none
     text-transform uppercase
     padding 5px 15px
-    border solid 3px purp
-    border-radius 2px
+    border-radius 1px
     font-weight 800
-    shadow-level(1)
+
     trans()
     &:hover
         background @background - 20
         border-color @background
-        shadow-level(2)
+
     &.btn-primary
-        background teal
+        background #57BC90
         border-color teal
         color dark-purp
         &:hover
@@ -182,21 +171,21 @@ p
         color purp
         background transparent
         border solid 2px purp
-        shadow-level(0)
+
         &:hover
             background teal
             border-color @background
-            shadow-level(1)
+
     &.btn-text-dark
         color #FFF
         background transparent
         border solid 2px #FFF
-        shadow-level(0)
+
         &:hover
             background #FFF
             color dark-purp
             border-color @background
-            shadow-level(1)
+
     &.btn-confirmation
         color black
         background green
@@ -209,12 +198,12 @@ p
         background transparent
         border solid 2px #FFF
         opacity 0.4
-        shadow-level(-1)
+
         &:hover
             background red
             color #FFF
             opacity 1
-            shadow-level(2)
+
             border-color @background
 
 input, select, textarea
@@ -246,7 +235,7 @@ input, select, textarea
 
 .autoform-remove-item.btn
     background light-grey
-    box-shadow none
+
     border none
     border-radius 50%
     font-size 1em
@@ -260,7 +249,7 @@ input, select, textarea
     width 100%
     border-radius 0
     border none
-    box-shadow none
+
     background light-grey
 
 
@@ -275,7 +264,7 @@ input, select, textarea
     background #478be5
     color #FFF
     z-index: z.header
-    shadow-level(2)
+
     ul
         margin 0
         padding 0
@@ -303,7 +292,7 @@ input, select, textarea
         width $side-nav
         ul
             display block
-        shadow-level(-1)
+
         a
             padding 20px 10px
             &:hover, &.active
@@ -321,7 +310,7 @@ input, select, textarea
     margin-bottom 20px
     position relative
     z-index 1
-    shadow-level(1)
+
     trans()
     .remove-from-menu
         display none
@@ -361,7 +350,7 @@ input, select, textarea
         margin-right 10px
         font-size 1.2em
     &:hover
-        shadow-level(3)
+
         // animation card 0.6s ease 1 forwards
 
 @keyframes card
@@ -398,6 +387,9 @@ input, select, textarea
         left auto
         a
             color blue
+
+#buffer
+    height 50px
 
 .profile-container
     position relative
@@ -449,3 +441,14 @@ input, select, textarea
             margin-bottom 10px
             textarea, input
             width 80%
+
+.map-container {
+  width: 100%;
+  max-width: 100%;
+  height: 200px;
+}
+
+brsmall {
+   display: block;
+   margin: 20px 0;
+}
