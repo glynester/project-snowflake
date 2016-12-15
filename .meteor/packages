@@ -44,7 +44,6 @@ cfs:autoform
 cfs:graphicsmagick
 accounts-base
 
-
 check
 yogiben:autoform-map
 dburles:google-maps
