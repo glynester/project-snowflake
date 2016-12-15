@@ -2,24 +2,40 @@
 
 
   <header>
+
     <div class="pure-g">
+    <div class="pure-u-10-24">
+      <span ><img class="logo" src = '/images/volunteer.gif'></span>
+      <a id="header-button" href="/projects"><i class="fa fa-snowflake-o"></i> View Projects</a>
+      &nbsp;
+
+      {{#if currentUser}}
+      <a id="header-button" href="/profile"><i class="fa fa-list"></i> Profile</a>
+      &nbsp;
+
+      <a id="header-button" href="/project/new"><i class="fa fa-plus"></i> Add Project</a>
+      {{/if}}
+    </div>
+  <div class="pure-u-4-24"><p></p>
+    <h1 align="center">I'm In</h1>
+    <h2 align="center">Spend time wisely </h2>
+  </div>
+  <div class="pure-u-10-24">
+    {{> loginButtons}}
+    {{> email}}
+
+  </div>
+  </div>
+
+    <!-- <div class="pure-g">
         <div class="pure-u-3-24"></div>
         <div class="pure-u-18-24">
-        <h1 align="center">I'm In: <small>fa fa fa fa fa </small></h1>
         </div>
         <div class="pure-u-3-24"><p></p></div>
     </div>
     <div class="pure-g">
       <div class="pure-u-3-24"></div>
       <div class="pure-u-18-24" style="vertical-align: middle;"><p></p>
-        <span ><img class="logo" src = '/images/volunteer.gif'></span>
-        {{#if currentUser}}
-        <a href="/profile"><i class="fa fa-list"></i> Profile</a>
-        <a href="/project/new"><i class="fa fa-plus"></i> Add Project</a>
-        <a href="/projects"><i class="fa fa-snowflake-o"></i> View Projects</a>
-        {{/if}}
-        {{> loginButtons}}
-          {{> email}}
       </div>
       <div class="pure-u-3-24"></div>
     </div>
@@ -27,7 +43,7 @@
         <div class="pure-u-3-24"></div>
         <div class="pure-u-18-24"></div>
         <div class="pure-u-3-24"></div>
-    </div>
+    </div> -->
   </header>
 
 
