@@ -21,7 +21,7 @@ Skills = new SimpleSchema({
 ProjectsSchema = new SimpleSchema({
   created_by: {
     type: String,
-    label: 'Created by:',
+    label: 'Created by',
     optional: true,
     autoValue: function() {
       if(this.isInsert) {
@@ -44,7 +44,7 @@ ProjectsSchema = new SimpleSchema({
 	location: {
 		type: [Number],
 		decimal: true,
-    label: 'Location:',
+    label: 'Location',
     autoform: {
       type: 'map',
       afFieldInput: {
@@ -60,7 +60,7 @@ ProjectsSchema = new SimpleSchema({
   },
   description: {
     type: String,
-    label: 'Description:',
+    label: 'Description',
     autoform: {
           afFieldInput: {
             type: "textarea"
@@ -69,7 +69,7 @@ ProjectsSchema = new SimpleSchema({
   },
   createdAt: {
     type: Date,
-    label: "Created At:",
+    label: "Created At",
     autoValue: function() {
     return new Date()
     },
@@ -79,7 +79,7 @@ ProjectsSchema = new SimpleSchema({
     },
   date: {
     type: Date,
-    label: "Date of Project:",
+    label: "Date of Project",
 		min: new Date(),
     optional: true,
     autoform: {
@@ -100,11 +100,11 @@ ProjectsSchema = new SimpleSchema({
 	},
   minPeople: {
     type: Number,
-    label: 'Minumum People Required'
+    label: 'Minimum Volunteers'
   },
   maxPeople: {
     type: Number,
-    label: 'Maximum People Allowed'
+    label: 'Maximum Volunteers'
   },
   skills: {
     type: [Skills]
