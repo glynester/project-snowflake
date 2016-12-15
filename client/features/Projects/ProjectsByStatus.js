@@ -78,10 +78,13 @@ Template.ProjectsByStatus.events({
   'click #no-filter'(event) {
     FlowRouter.go('view-projects');
   },
-  'click #filter-by-location'(event) {
-    FlowRouter.go('filtered-by-location');
+  'click #update-project'(event) {
+    FlowRouter.go('update-project');
   },
   'click #filter-by-skills'(event) {
+    FlowRouter.go('filtered-by-skills');
+  },
+  'click #update-project'(event) {
     FlowRouter.go('filtered-by-skills');
   },
 });
