@@ -1,50 +1,58 @@
 <template name="Profile">
-  <h3>I'm here!</h3>
-  <div class="map-container-profile">
+
+  <div class="pure-g">
+  <div class="pure-u-11-24">
     {{>profileMap}}
   </div>
-  <div class="thumbImage-container">
+<div class="pure-u-2-24"><p></p>
+</div>
+<div class="pure-u-11-24"><p></p>
     {{>imageView}}
-  </div>
+</div>
+</div>
+<br>
+    <div class="profile">
+        <h3>{{profile.bio}}</h3>
+        <table style="width:100%">
+          <tr>
+            <td>Skills</td>
+            <td>
+              {{ #each profile.skills }}
+                - {{ skill }}
+              {{ /each }}
+            </td>
+          </tr>
+        </table>
+        <br>
+    </div>
 
-  <h3>Profile</h3>
-  <h4>{{profile.bio}}</h4>
+        {{#if noProjects }}
+            <h3>You have no open projects, go create some!</h3>
+        {{ else }}
+          <h3> Your upcoming projects: </h3>
+          {{#each usersProjects}}
+            <div class="projects">
+                <h3><a href="/project/{{_id}}">{{description}}</a></h3>
+                <h5>{{getDistance(location)}}km away | {{formatDate(date)}} at {{time}}</h5>
+            </div>
+        {{/each}}
+      {{/if}}
 
-
-
-
-  <h3>Skills and Projects</h3>
-  <table style="width:100%">
-  <tr>
-    <td><h4>Skills</h4></td>
-    <td>
-      {{ #each profile.skills }}
-        * {{ skill }}
-        <br />
-      {{ /each }}
-    </td>
-  </tr>
-    {{#if noProjects }}
-  <tr>
-    <td><h4>Projects</h4></td>
-    <td>You have no open projects, go create some!</td>
-  </tr>
-    {{ else }}
-  <tr>
-    <td><h4>Projects</h4></td>
-    <td>
-      {{#each usersProjects}}
-      * {{description}}
-      <br />
-      * Date: {{date}}
-      <br />
-      <a href="/project/{{_id}}">View project</a>
-      <br />
+      {{#if notVolunteering }}
+          <h3>You have no upcoming volunteer sessions</h3>
+      {{ else }}
+        <h3> Your upcoming volunteer sessions: </h3>
+        {{#each volunteerProjects}}
+          <div class="projects">
+              <h3><a href="/project/{{_id}}">{{description}}</a></h3>
+              <h5>{{getDistance(location)}}km away | {{formatDate(date)}} at {{time}}</h5>
+          </div>
       {{/each}}
-    </td>
-  </tr>
-  {{/if}}
-</table>
+    {{/if}}
+
+
+
+
 
 <p class='userProfileImages'>
    {{#each userImages}}
@@ -69,7 +77,7 @@
   <div class="imageView">
     {{#with image}}
       <div>
-        <a href="/profile/{{profile._id}}"><img src="{{image.url store='thumbs' }}" alt="" class="thumbImage"></a>
+        <a href="/profile/{{profile._id}}"><img src="{{image.url store='images' }}" alt="" class="imageStore"></a>
       </div>
     {{/with}}
   </div>

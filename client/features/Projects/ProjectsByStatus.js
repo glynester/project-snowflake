@@ -5,9 +5,6 @@ Template.ProjectsByStatus.helpers({
     return Projects.find( {skills: {$in:  prof.skills} });
   },
   moreSupportBoolean: () => {
-    console.log(Projects.find( {status: 0,
-                          date: {$gte: new Date()}}).count());
-
     return Projects.find( {status: 0,
                           date: {$gte: new Date()}}).count() > 0;
   },
@@ -17,9 +14,6 @@ Template.ProjectsByStatus.helpers({
                            date: {$gte: new Date()} });
   },
   goingAheadSpacesBoolean: () => {
-    console.log(Projects.find( {status: 1,
-                          date: {$gte: new Date()}}).count());
-
     return Projects.find( {status: 1,
                           date: {$gte: new Date()} }).count() > 0;
   },
@@ -28,9 +22,6 @@ Template.ProjectsByStatus.helpers({
                           date: {$gte: new Date()} });
   },
   goingAheadFullBoolean: () => {
-    console.log(Projects.find( {status: 2,
-                          date: {$gte: new Date()}}).count());
-
     return Projects.find( {status: 2,
                           date: {$gte: new Date()} }).count() > 0;
   },
