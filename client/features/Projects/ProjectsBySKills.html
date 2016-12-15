@@ -1,16 +1,20 @@
 <template name="ProjectsBySkills">
-  <div class="projects">
-    <button id="no-filter">Show me everything</button> <button id="filter-by-location">My location</button> <button id="filter-by-status">By Status</button>
-
-    {{#if noProjects }}
-    <h3> Nothing matches your skills yet, add more or go start something that does! </h3>
+  <button id="no-filter">All</button> <button id="filter-by-location">By location</button> <button id="filter-by-status">By status</button>
+  <brsmall></brsmall>
+  {{#if noProjects }}
+    <h2> Nothing matches your skills yet, add more or go start something that does! </h2>
+  {{else}}
 
     {{#each projects}}
-      <h4><a href="/project/{{_id}}">{{description}}</a></h4>
-      <h6>{{getDistance(location)}}km away | {{formatDate(date)}} at {{time}}</h6>
-      <brsmall></brsmall>
+      <div class="projects">
+      <h3><a href="/project/{{_id}}">{{description}}</a></h3>
+      <h5>{{getDistance(location)}}km away | {{formatDate(date)}} at {{time}}</h5>
+      {{ #each skills }}
+        {{ skill }}
+      {{ /each }}
+      </div>
     {{/each}}
 
-    {{ /if }}
-  </div>
+  {{ /if }}
+
 </template>

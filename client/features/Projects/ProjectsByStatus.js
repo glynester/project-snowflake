@@ -39,10 +39,7 @@ Template.ProjectsByStatus.helpers({
     return Projects.find( {status: 2 });
   },
   noProjects(){
-    var id = Meteor.userId();
-    var prof = Profiles.findOne({created_by: id});
-    var skillSet = Projects.find( {skills: {$in:  prof.skills} });
-    return skillSet.count() === 0;
+    return projects.find( { date: {$gte: new Date()} }).count() === 0;
   },
   getDistance(destination){
     function deg2rad(deg) {
@@ -66,17 +63,25 @@ Template.ProjectsByStatus.helpers({
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
     var d = R * c; // Distance in km
     return Math.round(d*10)/10;
-  }
+  },
+  formatDate(date){
+    var date = date;
+    var formattedDate = date.toString().slice(0, 15);
+    return formattedDate;
+  },
 });
 
 Template.ProjectsByStatus.events({
   'click #no-filter'(event) {
     FlowRouter.go('view-projects');
   },
-  'click #filter-by-location'(event) {
-    FlowRouter.go('filtered-by-location');
+  'click #update-project'(event) {
+    FlowRouter.go('update-project');
   },
   'click #filter-by-skills'(event) {
+    FlowRouter.go('filtered-by-skills');
+  },
+  'click #update-project'(event) {
     FlowRouter.go('filtered-by-skills');
   },
 });

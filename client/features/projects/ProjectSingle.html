@@ -1,5 +1,6 @@
 <template name='ProjectSingle'>
 
+  <div class="projects">
   <h3>{{project.description}}</h3>
 
   <div class="map-container">
@@ -50,7 +51,7 @@
 {{ #if userSignedIn }}
     {{ #if userHasProfile }}
           {{ #if currentUserProject }}
-            <a href="/project/update/{{project._id}}">Update</a>
+            <a  href="/project/update/{{project._id}}"><button id="update-project">Update</button></a>
             <button id="delete-project">Delete</button>
           {{ else }}
               {{ #if alreadyVolunteered }}
@@ -69,6 +70,8 @@
    </form>
    {{ /if }}
 {{/if}}
+<brsmall></brsmall>
+</div>
 </template>
 
 <template name="projectListingMap">

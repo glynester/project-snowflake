@@ -24,7 +24,7 @@ describe('Running the logOut helper @watch', function() {
 describe('Signing in', function() {
     it('takes the user to the homepage and displays their email @watch', function () {
       signIn();
-      expect(browser.getText('.login-link-text')).to.equal("hamish.smith@test.com ▾");
+      expect(browser.getText('#login-name-link')).to.equal("hamish.smith@test.com ▾");
     });
 });
 
