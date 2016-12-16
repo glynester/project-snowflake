@@ -13,7 +13,7 @@ The site also incorporates a crowdsourcing element, with project organisers sett
 
 ## Setup
 
-1. Navigate to the folder where you want to store the app, and run these command line requests:
+1) Navigate to the folder where you want to store the app, and run these command line requests:
 
 ```
   git clone https://github.com/wirsindpapst/project-snowflake
@@ -21,7 +21,7 @@ The site also incorporates a crowdsourcing element, with project organisers sett
   meteor run
 ```
 
-2. Enter 'localhost:3000' into your preferred browser to load the site
+2) Enter 'localhost:3000' into your preferred browser to load the site
 
 ###Welcome to "I'm In"
 ![Home page](http://i.imgur.com/HadrXnD.png)
