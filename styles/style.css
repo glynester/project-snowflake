@@ -157,3 +157,7 @@ button {
     max-width:	46.923em; /* 610/13 */
     *max-width:	45.750em; /* 610/13.3333 - for IE */
 }
+
+.pure-g {
+  justify-content: center;
+}
