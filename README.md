@@ -59,7 +59,9 @@ There are 3 option for searching. Click the appropriate button:
  
 
 ### Volunteering for a project
-Using any of the search methods above, click on the hyperlink of a project that interests you
+Using any of the search methods above, click on the hyperlink of a project that interests you.  
+Click on the "Volunteer" button to sign yourself up for the project.
+If you had previously volunteered for the project, you will see a "Withdraw" button. Click this if you no longer wish to volunteer for that project.
 
 
 ===============================================================================
