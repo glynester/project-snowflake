@@ -60,6 +60,7 @@ ProfileSchema = new SimpleSchema({
   },
   projects: {
     type: [String],
+		defaultValue: [],
     optional: true,
     autoform: {
       type: 'hidden'
