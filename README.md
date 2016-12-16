@@ -68,9 +68,10 @@ Built with community spirit by:
  - Stephen Gregory
 
 ## Notes on the build
-
-Built using the Meteor framework.  
-Some styling based on http://purecss.io/.
+Built in Javascript using the Meteor framework.  
+Data is stored in a Mongo DB.  
+Tested using Chimp and Mocha/Chai.  
+Pure CSS used in styling  
 
 ## Backlog
 
