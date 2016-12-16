@@ -72,7 +72,7 @@ Some styling based on http://purecss.io/.
 
 ## Supporting user stories
 
-Following on from the above specification, the following user stories to create
+The following user stories apply:
 ```
 As a community minded person
 So that I can use the "I'm in" website and it's advanced functionality
