@@ -63,6 +63,10 @@ Using any of the search methods above, click on the hyperlink of a project that 
 Click on the "Volunteer" button to sign yourself up for the project.
 If you had previously volunteered for the project, you will see a "Withdraw" button. Click this if you no longer wish to volunteer for that project.
 
+### E-mail notifications
+When you create a profile  
+When you volunteer for a project  
+When a project is updated all volunteers get an email notice  
 
 ===============================================================================
 
