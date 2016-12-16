@@ -1,5 +1,4 @@
-# Makers Final PROJECT 
-## I'm In (i-min.co.uk )
+# Makers Final PROJECT - I'm In (i-min.co.uk )
 ### A.K.A Project Snowflake
 
 ## The Concept
