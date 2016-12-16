@@ -125,3 +125,13 @@ As a project initiator
 So that I can get people with specialised skills 
 I would like to be able to specify certain skills on the project   
 ``` 
+```
+As a community minded person
+So that I can find suitable projects to volunteer for
+I would like to be able to search for projects that are close to me, interest me and make use of any specialised skills I might possess. 
+``` 
+```
+As a community minded person
+In case I am no longer available
+I would like to be able to withdraw from projects I have volunteered for
+``` 
