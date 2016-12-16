@@ -72,7 +72,24 @@ Built with community spirit by:
 Built using the Meteor framework.  
 Some styling based on http://purecss.io/.
 
+## Backlog
 
+Features for the next sprint:
+
+* Calendar
+* Autosuggest for skills
+* Broadcast function between project organiser and volunteers
+* Gamification: volunteers get points and no shows get bad karma
+
+## What went well
+
+* Meteor is a intuitive framework that's fun to use
+* Scoped an MVP to work towards in week 1, then focused on enhancements in week 2
+
+## What didn't go so well
+
+* Testing was a challenge (this is well noted within the Meteor community)
+* The template / helpers paradigm encourages bad coding practice. It was difficult to adhere to SOLID principles within the framework.
 
 ## Supporting user stories
 
@@ -87,8 +104,6 @@ As a community minded person
 So that I can satisfy my need to be useful in the community
 I would like to be able to create community projects that people may volunteer for  
 ``` 
-2
-## 
 ```
 As a community minded person
 So that I can satisfy my need to be useful in the community
