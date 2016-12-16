@@ -1,6 +1,6 @@
 # Makers Final PROJECT
 
-# (I'm In) i-min.co.uk (secret development name "PROJECT SNOWFLAKE")
+# (I'm In) i-min.co.uk ###(secret development name "PROJECT SNOWFLAKE")
 
 ## Summary
 
