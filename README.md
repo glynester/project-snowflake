@@ -19,8 +19,7 @@ A browser-based application to allow users to collaborate on gainful pursuits in
 2. Enter 'localhost:3000' into your preferred browser to load the site
 
 ###Welcome to "I'm In"
-![Home page](https://www.dropbox.com/s/2oq0a8d2ybbn8u4/i-min%20homepage.png?raw=1)
-
+![Home page](http://i.imgur.com/HadrXnD.png)
 
 ## Using the site
 
