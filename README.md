@@ -1,10 +1,15 @@
 # Makers Final PROJECT i-min.co.uk (I'm In) 
 ###(secret development name "PROJECT SNOWFLAKE")
 
-## Summary
+## The Concept
 
-A browser-based application to allow users to collaborate on gainful pursuits in their local area. A user can list projects and also volunteer for projects. Projects are displayed on a map allowing a user to select accessible projects. 
+Many people like the idea of giving back to the local community, but aren't able to commit to a long term role or don't know where to look.
 
+"I'm In" serves as a platform to link up people who want to give back to their community with one-off opportunities to do so (think clearing up the local park, helping out at a food bank for a day, etc.).  
+
+A user can list projects and also volunteer for projects. Projects are displayed on a map allowing a user to select accessible projects. 
+
+The site also incorporates a crowdsourcing element, with project organisers setting a minimum number of volunteers required for the project to go ahead.
 
 ## Setup
 
