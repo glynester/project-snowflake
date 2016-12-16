@@ -69,9 +69,9 @@ Click on the "Volunteer" button to sign yourself up for the project.
 If you had previously volunteered for the project, you will see a "Withdraw" button. Click this if you no longer wish to volunteer for that project.
 
 ### E-mail notifications
-When you create a profile  
-When you volunteer for a project  
-When a project is updated all volunteers get an email notice  
+* When you create a profile  
+* When you volunteer for a project  
+* When a project is updated all volunteers get an email notice  
 
 ===============================================================================
 
@@ -110,14 +110,20 @@ Features for the next sprint:
 
 * Testing was a challenge (this is well noted within the Meteor community)
 * The template / helpers paradigm encourages bad coding practice. It was difficult to adhere to SOLID principles within the framework.
+* Styling proved to be more time consuming than anticipated.
 
 ## Supporting user stories
 
 The following user stories apply:
 ```
 As a community minded person
-So that I can use the "I'm in" website and it's advanced functionality
+So that I can fully use the "I'm in" website functionality
 I would like to sign up to the website
+```
+```
+As a community minded person
+So that I can fully use the "I'm in" website functionality
+I would like be able to create a profile that shows my location and specialised skills
 ```
 ```
 As a community minded person
