@@ -1,6 +1,6 @@
-# (I'm In) i-min.co.uk (secret development name "PROJECT SNOWFLAKE")
-
 # Makers Final PROJECT
+
+# (I'm In) i-min.co.uk (secret development name "PROJECT SNOWFLAKE")
 
 ## Summary
 
@@ -13,12 +13,9 @@ An application to allow users to collaborate on local gainful pursuits
 1. Navigate to the folder where you want to store the app, and run these command line requests:
 
 ```
-  git clone https://github.com/James-SteelX/makersbnb.git
-  cd makersbnb
-  git install bundler
-  gem install rackup
-  bundle
-  rackup
+  git clone https://github.com/wirsindpapst/project-snowflake
+  cd project-snowflake
+  meteor run
 ```
 
 2. Enter 'localhost:3000' into your preferred browser to load the site
@@ -32,7 +29,7 @@ An application to allow users to collaborate on local gainful pursuits
   * Fill in the form
   * You'll receive a confirmation email to the email address you entered once everything is complete
 
-Congratulations! You're now part of the Makersbnb community, the home screen is pretty straightforward, but let's quickly run through what everything does:
+Welcome to "I'm In"
 
 ![Imgur](http://i.imgur.com/RYFZEcQ.png)
 
