@@ -139,3 +139,8 @@ As a community minded person
 In case I am no longer available
 I would like to be able to withdraw from projects I have volunteered for
 ``` 
+```
+As a project initiator
+So that I can determine if my project has the resources to proceed
+I would like to be able to see if there are enough volunteers and view their skills 
+``` 
