@@ -26,12 +26,17 @@ The site also incorporates a crowdsourcing element, with project organisers sett
 ###Welcome to "I'm In"
 ![Home page](http://i.imgur.com/HadrXnD.png)
 
+## Accessing the site
+
+https://imin.eu.meteorapp.com
+
+
 ## Using the site
 
 ### Signing up
 Although it is possible to browse projects without having an account, all meaningful site useage does require you to be signed up.
   * Click the 'Sign up' link in the navigation bar at the top
-  * Fill in the form
+  * Create a profile: enter some brief details, an optional profile picture and drop the pin in the area you'd like receive search results
   * On completion you'll receive a confirmation email to the email address you entered
 
 ### Navigating the site
@@ -42,6 +47,8 @@ The navigation bar (at the top) remains the same on every screen, and lets you q
 * View (and update) you profile
 Clicking the "I'm in" icon in the top left will take you back to the home screen.
 
+### Adding a project
+Create a project by entering a few details including the number of people you need, and the specific skills required.
 
 ### Searching for a project
 
@@ -51,7 +58,8 @@ There are 3 option for searching:
  * By status
 
 ### Volunteering for a project
-
+* View projects: Projects are displayed by default in chronological order (closest to furthest away). You can also sort projects by your location, its status, or filter them by your skills
+* Volunteer: Volunteer for a project that interests you
 
 
 ===============================================================================
@@ -110,3 +118,8 @@ As a community minded person
 So that I can satisfy my need to be useful in the community
 I would like to be able to volunteer for community projects
 ```
+```
+As a project initiator
+So that I can get people with specialised skills 
+I would like to be able to specify certain skills on the project   
+``` 
