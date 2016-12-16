@@ -29,7 +29,9 @@ Although it is possible to browse projects without having an account, all meanin
 
 Welcome to "I'm In"
 
-![Imgur](http://i.imgur.com/RYFZEcQ.png)
+![Home page](https://www.dropbox.com/s/2oq0a8d2ybbn8u4/i-min%20homepage.png?raw=1)
+
+
 
 ### Navigating the site
 
