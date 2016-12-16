@@ -66,7 +66,7 @@ Built with community spirit by:
 
 ## Notes on the build
 
-Built using the Meteor framework. backend, Some styling based on (http://purecss.io/).
+Built using the Meteor framework. backend, Some styling based on http://purecss.io/.
 
 
 
@@ -75,11 +75,11 @@ Built using the Meteor framework. backend, Some styling based on (http://purecss
 Following on from the above specification, the following user stories to create
 ```
 As a community minded person
-So that I can use the "I'm in" website
+So that I can use the "I'm in" website and it's advanced functionality
 I would like to sign up to the website
 ```
 ```
-As a visitor
-So that I can book a space
-I would like to view other users spaces
+As a community minded person
+So that I can satisfy my need to be useful in the community
+I would like to be able to volunteer for community projects
 ```
