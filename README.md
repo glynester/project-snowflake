@@ -27,8 +27,7 @@ Although it is possible to browse projects without having an account, all meanin
   * Fill in the form
   * On completion you'll receive a confirmation email to the email address you entered
 
-Welcome to "I'm In"
-
+###Welcome to "I'm In"
 ![Home page](https://www.dropbox.com/s/2oq0a8d2ybbn8u4/i-min%20homepage.png?raw=1)
 
 
