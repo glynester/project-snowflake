@@ -86,7 +86,9 @@ I would like to sign up to the website
 As a community minded person
 So that I can satisfy my need to be useful in the community
 I would like to be able to create community projects that people may volunteer for  
-```
+``` 
+2
+## 
 ```
 As a community minded person
 So that I can satisfy my need to be useful in the community
