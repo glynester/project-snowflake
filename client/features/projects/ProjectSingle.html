@@ -10,7 +10,7 @@
 
   <table style="width:100%">
     <tr>
-      <td>Status</td>
+      <td><strong>Status:</strong></td>
       <td>{{ getStatus}}</td>
     </tr>
     {{ #if goingAhead }}
@@ -20,16 +20,16 @@
     </tr>
     {{ else }}
     <tr>
-      <td>Volunteers required</td>
+      <td><strong>Volunteers required:</strong></td>
       <td>{{ volunteersRequired }}</td>
     </tr>
     {{ /if }}
     <tr>
-      <td>Date and time</td>
+      <td><strong>Date and time:</strong></td>
       <td>{{formatDate(project.date)}} at {{project.time}}</td>
     </tr>
     <tr>
-      <td>Skills</td>
+      <td><strong>Skills:</strong></td>
       <td>
         {{ #each project.skills }}
           * {{ skill }}
