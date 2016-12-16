@@ -74,8 +74,8 @@ Built using the Meteor framework. backend, Some styling based on (http://purecss
 
 Following on from the above specification, the following user stories to create
 ```
-As a visitor
-So that I can use the Makersbnb website
+As a community minded person
+So that I can use the "I'm in" website
 I would like to sign up to the website
 ```
 ```
