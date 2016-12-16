@@ -1,5 +1,6 @@
-# Makers Final PROJECT i-min.co.uk (I'm In) 
-###(secret development name "PROJECT SNOWFLAKE")
+# Makers Final PROJECT 
+## I'm In (i-min.co.uk )
+### A.K.A Project Snowflake
 
 ## The Concept
 
