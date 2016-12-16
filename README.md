@@ -44,22 +44,22 @@ Although it is possible to browse projects without having an account, all meanin
 The navigation bar (at the top) remains the same on every screen, and lets you quickly access :
 * View Projects, search projects (see "Searching for a project" below) and sign up or withdraw from projects (see "Volunteering for a project" below)    
 * Add a new project  
-* View (and update) you profile
+* View (and update) your profile
 Clicking the "I'm in" icon in the top left will take you back to the home screen.
 
 ### Adding a project
 Create a project by entering a few details including the number of people you need, and the specific skills required.
 
 ### Searching for a project
-
-There are 3 option for searching:
- * By skills
- * By location
- * By status
+Projects are displayed by default in chronological order (closest to furthest away).  
+There are 3 option for searching. Click the appropriate button:
+ * By skills - any projects that match specialised skills that you have entered on your profile will be displayed
+ * By location - a map centred around your location will be displayed so you can see projects close to your home 
+ * By status -  any projects that still required volunteers to go ahead will be displayed  
+ 
 
 ### Volunteering for a project
-* View projects: Projects are displayed by default in chronological order (closest to furthest away). You can also sort projects by your location, its status, or filter them by your skills
-* Volunteer: Volunteer for a project that interests you
+Using any of the search methods above, click on the hyperlink of a project that interests you
 
 
 ===============================================================================
