@@ -144,3 +144,8 @@ As a project initiator
 So that I can determine if my project has the resources to proceed
 I would like to be able to see if there are enough volunteers and view their skills 
 ``` 
+```
+As a project initiator
+So that I can keep my volunteers informed
+I would like to be able to communicate with them as a group. 
+``` 
