@@ -33,12 +33,12 @@ Although it is possible to browse projects without having an account, all meanin
 
 ### Navigating the site
 
-The navigation bar (at the top) is the same on every screen, and lets you quickly access the site's main features, namely searching, listing a property, viewing your profile, and signing out. In addition, clicking the icon in the top left will take you back to this home screen.
+The navigation bar (at the top) remains the same on every screen, and lets you quickly access :
+* View Projects, search projects (see "Searching for a project" below) and sign up or withdraw from projects (see "Volunteering for a project" below)    
+* Add a new project  
+* View (and update) you profile
+Clicking the "I'm in" icon in the top left will take you back to the home screen.
 
-The two buttons in the main body of the site let you:
-
- * Search the properties listed on Makersbnb
- * Or, for the indecisive, view all listings
 
 ### Searching for a project
 
@@ -46,6 +46,10 @@ There are 3 option for searching:
  * By skills
  * By location
  * By status
+
+### Volunteering for a project
+
+
 
 ===============================================================================
 
